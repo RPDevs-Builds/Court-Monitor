@@ -1024,7 +1024,12 @@
       "county": "Greene",
       "state": "OH",
       "fips": "39057",
-      "court_service": null,
+      "court_service": {
+        "adapter": "greene",
+        "base_url": "https://courts.greenecountyohio.gov/eservices",
+        "enabled": true,
+        "notes": "Greene County Common Pleas Court (CourtView eServices)"
+      },
       "jail_service": {
         "adapter": "miami_valley",
         "feed_type": "greene",
@@ -1155,15 +1160,15 @@
         "notes": "Pending court portal adapter for Adams County"
       },
       "jail_service": {
-        "adapter": "unmapped",
-        "feed_type": null,
+        "adapter": "miami_valley",
+        "feed_type": "adams",
         "app_id": null,
-        "primary_url": null,
+        "primary_url": "https://adams.miamivalleyjails.org",
         "fallback_url": null,
-        "enabled": false,
-        "notes": "Pending jail custody feed for Adams County"
+        "enabled": true,
+        "notes": "Adams County Jail (Miami Valley Jails)"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "allen_oh": {
@@ -1173,10 +1178,10 @@
       "state": "OH",
       "fips": "39003",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Allen County"
+        "adapter": "allen",
+        "base_url": "https://courtvweb.allencountyohio.com/eservices",
+        "enabled": true,
+        "notes": "Allen County Common Pleas Court (CourtView eServices)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1187,7 +1192,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Allen County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "athens_oh": {
@@ -1221,10 +1226,10 @@
       "state": "OH",
       "fips": "39013",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Belmont County"
+        "adapter": "belmont",
+        "base_url": "https://eservices.belmontcountycourts.com/eservices",
+        "enabled": true,
+        "notes": "Belmont County Common Pleas Court (CourtView eServices)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1235,7 +1240,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Belmont County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "brown_oh": {
@@ -1251,15 +1256,15 @@
         "notes": "Pending court portal adapter for Brown County"
       },
       "jail_service": {
-        "adapter": "unmapped",
-        "feed_type": null,
+        "adapter": "miami_valley",
+        "feed_type": "brown",
         "app_id": null,
-        "primary_url": null,
+        "primary_url": "https://brown.miamivalleyjails.org",
         "fallback_url": null,
-        "enabled": false,
-        "notes": "Pending jail custody feed for Brown County"
+        "enabled": true,
+        "notes": "Brown County Jail (Miami Valley Jails)"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "carroll_oh": {
@@ -1299,15 +1304,15 @@
         "notes": "Pending court portal adapter for Champaign County"
       },
       "jail_service": {
-        "adapter": "unmapped",
-        "feed_type": null,
+        "adapter": "miami_valley",
+        "feed_type": "tricounty",
         "app_id": null,
-        "primary_url": null,
+        "primary_url": "https://tricounty.miamivalleyjails.org",
         "fallback_url": null,
-        "enabled": false,
-        "notes": "Pending jail custody feed for Champaign County"
+        "enabled": true,
+        "notes": "Tri-County Regional Jail (Champaign County)"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "clermont_oh": {
@@ -1323,15 +1328,15 @@
         "notes": "Pending court portal adapter for Clermont County"
       },
       "jail_service": {
-        "adapter": "unmapped",
-        "feed_type": null,
+        "adapter": "miami_valley",
+        "feed_type": "clermont",
         "app_id": null,
-        "primary_url": null,
+        "primary_url": "https://clermont.miamivalleyjails.org",
         "fallback_url": null,
-        "enabled": false,
-        "notes": "Pending jail custody feed for Clermont County"
+        "enabled": true,
+        "notes": "Clermont County Jail (Miami Valley Jails)"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "clinton_oh": {
@@ -1347,15 +1352,15 @@
         "notes": "Pending court portal adapter for Clinton County"
       },
       "jail_service": {
-        "adapter": "unmapped",
-        "feed_type": null,
+        "adapter": "miami_valley",
+        "feed_type": "clinton",
         "app_id": null,
-        "primary_url": null,
+        "primary_url": "https://clinton.miamivalleyjails.org",
         "fallback_url": null,
-        "enabled": false,
-        "notes": "Pending jail custody feed for Clinton County"
+        "enabled": true,
+        "notes": "Clinton County Jail (Miami Valley Jails)"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "coshocton_oh": {
@@ -1539,15 +1544,15 @@
         "notes": "Pending court portal adapter for Highland County"
       },
       "jail_service": {
-        "adapter": "unmapped",
-        "feed_type": null,
+        "adapter": "miami_valley",
+        "feed_type": "highland",
         "app_id": null,
-        "primary_url": null,
+        "primary_url": "https://highland.miamivalleyjails.org",
         "fallback_url": null,
-        "enabled": false,
-        "notes": "Pending jail custody feed for Highland County"
+        "enabled": true,
+        "notes": "Highland County Jail (Miami Valley Jails)"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "jackson_oh": {
@@ -1581,10 +1586,10 @@
       "state": "OH",
       "fips": "39083",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Knox County"
+        "adapter": "knox",
+        "base_url": "https://www.clerkofcourts.co.knox.oh.us/eservices",
+        "enabled": true,
+        "notes": "Knox County Common Pleas Court (CourtView eServices)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1595,7 +1600,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Knox County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "lawrence_oh": {
@@ -1659,15 +1664,15 @@
         "notes": "Pending court portal adapter for Logan County"
       },
       "jail_service": {
-        "adapter": "unmapped",
-        "feed_type": null,
+        "adapter": "miami_valley",
+        "feed_type": "logan",
         "app_id": null,
-        "primary_url": null,
+        "primary_url": "https://logan.miamivalleyjails.org",
         "fallback_url": null,
-        "enabled": false,
-        "notes": "Pending jail custody feed for Logan County"
+        "enabled": true,
+        "notes": "Logan County Jail (Miami Valley Jails)"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "lucas_oh": {
@@ -2013,21 +2018,21 @@
       "state": "OH",
       "fips": "39141",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Ross County"
+        "adapter": "ross",
+        "base_url": "https://eaccess.co.ross.oh.us/eservices",
+        "enabled": true,
+        "notes": "Ross County Common Pleas Court (CourtView eServices)"
       },
       "jail_service": {
-        "adapter": "unmapped",
-        "feed_type": null,
+        "adapter": "miami_valley",
+        "feed_type": "ross",
         "app_id": null,
-        "primary_url": null,
+        "primary_url": "https://ross.miamivalleyjails.org",
         "fallback_url": null,
-        "enabled": false,
-        "notes": "Pending jail custody feed for Ross County"
+        "enabled": true,
+        "notes": "Ross County Jail (Miami Valley Jails)"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "shelby_oh": {
@@ -2043,15 +2048,15 @@
         "notes": "Pending court portal adapter for Shelby County"
       },
       "jail_service": {
-        "adapter": "unmapped",
-        "feed_type": null,
+        "adapter": "miami_valley",
+        "feed_type": "shelby",
         "app_id": null,
-        "primary_url": null,
+        "primary_url": "https://shelby.miamivalleyjails.org",
         "fallback_url": null,
-        "enabled": false,
-        "notes": "Pending jail custody feed for Shelby County"
+        "enabled": true,
+        "notes": "Shelby County Jail (Miami Valley Jails)"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "union_oh": {
@@ -2061,21 +2066,21 @@
       "state": "OH",
       "fips": "39159",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Union County"
+        "adapter": "union",
+        "base_url": "https://eservices.co.union.oh.us/eservices",
+        "enabled": true,
+        "notes": "Union County Common Pleas Court (CourtView eServices)"
       },
       "jail_service": {
-        "adapter": "unmapped",
-        "feed_type": null,
+        "adapter": "miami_valley",
+        "feed_type": "tricounty",
         "app_id": null,
-        "primary_url": null,
+        "primary_url": "https://tricounty.miamivalleyjails.org",
         "fallback_url": null,
-        "enabled": false,
-        "notes": "Pending jail custody feed for Union County"
+        "enabled": true,
+        "notes": "Tri-County Regional Jail (Union County)"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "vinton_oh": {
@@ -2157,10 +2162,10 @@
       "state": "OH",
       "fips": "39173",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Wood County"
+        "adapter": "wood",
+        "base_url": "https://pub.clerkofcourt.co.wood.oh.us/eservices",
+        "enabled": true,
+        "notes": "Wood County Common Pleas Court (CourtView eServices)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -2171,7 +2176,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Wood County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     }
   }
