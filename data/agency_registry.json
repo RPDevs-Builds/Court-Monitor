@@ -1005,7 +1005,12 @@
       "county": "Clark",
       "state": "OH",
       "fips": "39023",
-      "court_service": null,
+      "court_service": {
+        "adapter": "clark",
+        "base_url": "https://eservices.clarkcountyohiocourt.com/eservices",
+        "enabled": true,
+        "polling_interval_seconds": 3600
+      },
       "jail_service": {
         "adapter": "miami_valley",
         "feed_type": "clark",
@@ -1048,7 +1053,12 @@
       "county": "Miami",
       "state": "OH",
       "fips": "39109",
-      "court_service": null,
+      "court_service": {
+        "adapter": "miami",
+        "base_url": "https://courts.miamicountyohio.gov/eservices",
+        "enabled": true,
+        "polling_interval_seconds": 3600
+      },
       "jail_service": {
         "adapter": "miami_valley",
         "feed_type": "miami",

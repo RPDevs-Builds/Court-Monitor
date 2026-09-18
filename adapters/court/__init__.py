@@ -60,6 +60,8 @@ from adapters.court.defiance import DefianceCourtAdapter
 from adapters.court.clermont import ClermontCourtAdapter
 from adapters.court.clinton import ClintonCourtAdapter
 from adapters.court.brown import BrownCourtAdapter
+from adapters.court.clark import ClarkCourtAdapter
+from adapters.court.miami import MiamiCourtAdapter
 from core.registry import get_registry
 
 
@@ -231,6 +233,16 @@ def get_court_adapter(county_id: str = "cuyahoga_oh") -> Optional[BaseCourtAdapt
             county_id=county.id,
             portal_url=county.court_service.base_url
         )
+    elif adapter_type in ("clark", "clark_court"):
+        return ClarkCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
+    elif adapter_type in ("miami", "miami_court"):
+        return MiamiCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
     elif adapter_type in ("fulton", "fulton_court", "fulton_caselook"):
         return FultonCourtAdapter(
             county_id=county.id,
@@ -389,6 +401,8 @@ __all__ = [
     "ClermontCourtAdapter",
     "ClintonCourtAdapter",
     "BrownCourtAdapter",
+    "ClarkCourtAdapter",
+    "MiamiCourtAdapter",
     "get_court_adapter",
 ]
 
