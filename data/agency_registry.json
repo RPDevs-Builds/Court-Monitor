@@ -887,6 +887,205 @@
         "notes": "OCV mobile inmate feed extracted from van_wert APK."
       },
       "active": true
+    },
+    "montgomery_oh": {
+      "id": "montgomery_oh",
+      "name": "Montgomery County Common Pleas Court & Sheriff",
+      "county": "Montgomery",
+      "state": "OH",
+      "fips": "39113",
+      "court_service": {
+        "adapter": "montgomery",
+        "base_url": "https://pro.mcohio.org",
+        "enabled": true,
+        "notes": "Montgomery County Public Records Online (PROv3)"
+      },
+      "jail_service": {
+        "adapter": "miami_valley",
+        "feed_type": "mont",
+        "app_id": null,
+        "primary_url": "https://mont.miamivalleyjails.org",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Miami Valley Jails consortium (Montgomery County)"
+      },
+      "active": true
+    },
+    "butler_oh": {
+      "id": "butler_oh",
+      "name": "Butler County Common Pleas Court & Sheriff",
+      "county": "Butler",
+      "state": "OH",
+      "fips": "39017",
+      "court_service": {
+        "adapter": "butler",
+        "base_url": "https://clerkservices.bcohio.gov/eservices",
+        "enabled": true,
+        "notes": "Butler County Clerk of Courts Tyler CourtView eServices"
+      },
+      "jail_service": {
+        "adapter": "miami_valley",
+        "feed_type": "butler",
+        "app_id": null,
+        "primary_url": "https://butler.miamivalleyjails.org",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Miami Valley Jails consortium (Butler County)"
+      },
+      "active": true
+    },
+    "warren_oh": {
+      "id": "warren_oh",
+      "name": "Warren County Sheriff's Office",
+      "county": "Warren",
+      "state": "OH",
+      "fips": "39165",
+      "court_service": null,
+      "jail_service": {
+        "adapter": "miami_valley",
+        "feed_type": "warren",
+        "app_id": null,
+        "primary_url": "https://warren.miamivalleyjails.org",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Miami Valley Jails consortium (Warren County)"
+      },
+      "active": true
+    },
+    "clark_oh": {
+      "id": "clark_oh",
+      "name": "Clark County Sheriff's Office",
+      "county": "Clark",
+      "state": "OH",
+      "fips": "39023",
+      "court_service": null,
+      "jail_service": {
+        "adapter": "miami_valley",
+        "feed_type": "clark",
+        "app_id": null,
+        "primary_url": "https://clark.miamivalleyjails.org",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Miami Valley Jails consortium (Clark County)"
+      },
+      "active": true
+    },
+    "greene_oh": {
+      "id": "greene_oh",
+      "name": "Greene County Sheriff's Office",
+      "county": "Greene",
+      "state": "OH",
+      "fips": "39057",
+      "court_service": null,
+      "jail_service": {
+        "adapter": "miami_valley",
+        "feed_type": "greene",
+        "app_id": null,
+        "primary_url": "https://greene.miamivalleyjails.org",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Miami Valley Jails consortium (Greene County)"
+      },
+      "active": true
+    },
+    "miami_oh": {
+      "id": "miami_oh",
+      "name": "Miami County Sheriff's Office",
+      "county": "Miami",
+      "state": "OH",
+      "fips": "39109",
+      "court_service": null,
+      "jail_service": {
+        "adapter": "miami_valley",
+        "feed_type": "miami",
+        "app_id": null,
+        "primary_url": "https://miami.miamivalleyjails.org",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Miami Valley Jails consortium (Miami County)"
+      },
+      "active": true
+    },
+    "darke_oh": {
+      "id": "darke_oh",
+      "name": "Darke County Sheriff's Office",
+      "county": "Darke",
+      "state": "OH",
+      "fips": "39037",
+      "court_service": null,
+      "jail_service": {
+        "adapter": "miami_valley",
+        "feed_type": "darke",
+        "app_id": null,
+        "primary_url": "https://darke.miamivalleyjails.org",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Miami Valley Jails consortium (Darke County)"
+      },
+      "active": true
+    },
+    "preble_oh": {
+      "id": "preble_oh",
+      "name": "Preble County Sheriff's Office",
+      "county": "Preble",
+      "state": "OH",
+      "fips": "39135",
+      "court_service": null,
+      "jail_service": {
+        "adapter": "miami_valley",
+        "feed_type": "preble",
+        "app_id": null,
+        "primary_url": "https://preble.miamivalleyjails.org",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Miami Valley Jails consortium (Preble County)"
+      },
+      "active": true
+    },
+    "portage_oh": {
+      "id": "portage_oh",
+      "name": "Portage County Common Pleas Court",
+      "county": "Portage",
+      "state": "OH",
+      "fips": "39133",
+      "court_service": {
+        "adapter": "portage",
+        "base_url": "https://services.portageco.com/eservices",
+        "enabled": true,
+        "notes": "Portage County Tyler CourtView eServices"
+      },
+      "jail_service": null,
+      "active": true
+    },
+    "mahoning_oh": {
+      "id": "mahoning_oh",
+      "name": "Mahoning County Court of Common Pleas",
+      "county": "Mahoning",
+      "state": "OH",
+      "fips": "39099",
+      "court_service": {
+        "adapter": "mahoning",
+        "base_url": "https://ecourts.mahoningcountyoh.gov/eservices",
+        "enabled": true,
+        "notes": "Mahoning County Tyler CourtView eServices"
+      },
+      "jail_service": null,
+      "active": true
+    },
+    "medina_oh": {
+      "id": "medina_oh",
+      "name": "Medina County Court of Common Pleas",
+      "county": "Medina",
+      "state": "OH",
+      "fips": "39103",
+      "court_service": {
+        "adapter": "medina",
+        "base_url": "https://portal-ohmedina.tylertech.cloud/Portal",
+        "enabled": true,
+        "notes": "Medina County Tyler Odyssey Portal"
+      },
+      "jail_service": null,
+      "active": true
     }
   }
 }

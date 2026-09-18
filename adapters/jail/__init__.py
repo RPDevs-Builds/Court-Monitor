@@ -10,6 +10,7 @@ from adapters.jail.ocv_s3 import OCVS3JailAdapter
 from adapters.jail.ocv_rtjb import OCVRTJBJailAdapter
 from adapters.jail.summit import SummitJailAdapter
 from adapters.jail.odrc import ODRCJailAdapter
+from adapters.jail.miami_valley import MiamiValleyJailAdapter
 from core.registry import get_registry
 from core.models import CustodyCheckResult, InmateRecord
 
@@ -40,6 +41,11 @@ def get_jail_adapter(county_id: str) -> Optional[BaseJailAdapter]:
         return SummitJailAdapter(county_id=county.id)
     elif adapter_name == "odrc":
         return ODRCJailAdapter(county_id=county.id)
+    elif adapter_name in ("miami_valley", "miami_valley_jail"):
+        return MiamiValleyJailAdapter(
+            county_id=county.id,
+            subdomain=service.feed_type or None
+        )
     
     return None
 
@@ -99,6 +105,7 @@ __all__ = [
     "OCVRTJBJailAdapter",
     "SummitJailAdapter",
     "ODRCJailAdapter",
+    "MiamiValleyJailAdapter",
     "get_jail_adapter",
     "check_custody_statewide",
 ]
