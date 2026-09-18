@@ -46,11 +46,15 @@ flowchart TD
     subgraph CourtAdapters["Court Docket Adapters (adapters/court/)"]
         CourtFactory["Court Factory: get_court_adapter()"]
         CuyahogaCourt["CuyahogaCourtAdapter<br/>(Headless Chromium + ASP.NET WebForms)"]
+        ClevelandMuni["ClevelandMunicipalCourtAdapter<br/>(Tyler Technologies Odyssey Portal)"]
+        TylerBase["TylerCourtAdapter<br/>(Modular Base for Odyssey Portals)"]
         FranklinCourt["FranklinCourtAdapter<br/>(CIO Portal / Java Servlet)"]
         SummitCourt["SummitCourtAdapter<br/>(ClerkWeb ASP Portal)"]
 
         Registry --> CourtFactory
         CourtFactory --> CuyahogaCourt
+        CourtFactory --> ClevelandMuni
+        ClevelandMuni --> TylerBase
         CourtFactory --> FranklinCourt
         CourtFactory --> SummitCourt
     end
@@ -60,10 +64,11 @@ flowchart TD
 
 ## 2. Supported Ohio Jurisdictions & Capability Matrix
 
-All counties are dynamically indexed in [`data/agency_registry.json`](file:///home/llmuser/projects/court-monitor/data/agency_registry.json):
+All 38 registered agencies are dynamically indexed in [`data/agency_registry.json`](file:///home/llmuser/projects/court-monitor/data/agency_registry.json):
 
 | County ID | Agency / Jurisdiction | Court Docket | Jail Roster | Architecture / Vendor |
 | :--- | :--- | :---: | :---: | :--- |
+| **`cleveland_muni_oh`** | Cleveland Municipal Court | ✅ Active | N/A | Tyler Technologies Odyssey Portal (`CMCPORTAL`) + AWS WAF |
 | **`cuyahoga_oh`** | Cuyahoga County Common Pleas & Sheriff | ✅ Active | ✅ Active | ASP.NET WebForms + OCV S3 JSON (`a26544113`) |
 | **`lake_oh`** | Lake County Clerk of Courts & Sheriff | ✅ Active | ✅ Active | CourtView + OCV RTJB Mobile Feed |
 | **`wayne_oh`** | Wayne County Sheriff's Office | Planned | ✅ Active | Henschen + OCV RTJB Mobile Feed |
@@ -73,6 +78,7 @@ All counties are dynamically indexed in [`data/agency_registry.json`](file:///ho
 | **`franklin_oh`** | Franklin County Clerk & Sheriff (Columbus)| ✅ Active | Planned | IBM WebSphere CIO + Sheriff Portal |
 | **`hamilton_oh`** | Hamilton County Clerk & Justice Center | ✅ Active | Planned | CourtClerk Portal + Sheriff Inmate Portal |
 | **`odrc_statewide`**| Ohio Dept of Rehabilitation & Correction | N/A | ✅ Active | Statewide Prison, Parole & Post-Release Control |
+| **Regional Jails (30+)** | Auglaize, Trumbull, Jefferson, Crawford, etc. | Planned | ✅ Active | Automated OCV RTJB Feed Adapters (Aurora Harvested) |
 
 > [!TIP]
 > Complete technical documentation for expanding to other vendors and US states is maintained in [`docs/VENDOR_REGISTRY.md`](file:///home/llmuser/projects/court-monitor/docs/VENDOR_REGISTRY.md).
