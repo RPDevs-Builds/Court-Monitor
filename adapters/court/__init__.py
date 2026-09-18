@@ -57,6 +57,9 @@ from adapters.court.licking import LickingCourtAdapter
 from adapters.court.sandusky import SanduskyCourtAdapter
 from adapters.court.fairfield import FairfieldCourtAdapter
 from adapters.court.defiance import DefianceCourtAdapter
+from adapters.court.clermont import ClermontCourtAdapter
+from adapters.court.clinton import ClintonCourtAdapter
+from adapters.court.brown import BrownCourtAdapter
 from core.registry import get_registry
 
 
@@ -223,6 +226,11 @@ def get_court_adapter(county_id: str = "cuyahoga_oh") -> Optional[BaseCourtAdapt
             county_id=county.id,
             portal_url=county.court_service.base_url
         )
+    elif adapter_type in ("clermont", "clermont_court"):
+        return ClermontCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
     elif adapter_type in ("fulton", "fulton_court", "fulton_caselook"):
         return FultonCourtAdapter(
             county_id=county.id,
@@ -303,6 +311,16 @@ def get_court_adapter(county_id: str = "cuyahoga_oh") -> Optional[BaseCourtAdapt
             county_id=county.id,
             base_url=county.court_service.base_url
         )
+    elif adapter_type in ("clinton", "clinton_court", "clinton_caselook"):
+        return ClintonCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
+    elif adapter_type in ("brown", "brown_court", "brown_caselook"):
+        return BrownCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
     elif adapter_type in ("courtview", "lake_courtview", "eservices"):
         return CourtViewAdapter(
             county_id=county.id,
@@ -368,6 +386,9 @@ __all__ = [
     "FairfieldCourtAdapter",
     "SanduskyCourtAdapter",
     "DefianceCourtAdapter",
+    "ClermontCourtAdapter",
+    "ClintonCourtAdapter",
+    "BrownCourtAdapter",
     "get_court_adapter",
 ]
 

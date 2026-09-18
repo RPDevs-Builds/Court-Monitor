@@ -72,6 +72,30 @@ class TestBatchExpansionAdapters(unittest.TestCase):
         self.assertIn("curl", curl)
         self.assertIn("eservices.defianceohcountycourts.org", curl)
 
+    def test_clermont_court_adapter_resolution(self):
+        """Verify Clermont County CourtView court adapter resolves from registry."""
+        adapter = get_court_adapter("clermont_oh")
+        self.assertIsNotNone(adapter)
+        curl = adapter.generate_curl_command()
+        self.assertIn("curl", curl)
+        self.assertIn("eservices.clermontclerk.org", curl)
+
+    def test_clinton_court_adapter_resolution(self):
+        """Verify Clinton County Henschen CaseLook court adapter resolves from registry."""
+        adapter = get_court_adapter("clinton_oh")
+        self.assertIsNotNone(adapter)
+        curl = adapter.generate_curl_command()
+        self.assertIn("curl", curl)
+        self.assertIn("clintoncountycourts.org", curl)
+
+    def test_brown_court_adapter_resolution(self):
+        """Verify Brown County Henschen CaseLook court adapter resolves from registry."""
+        adapter = get_court_adapter("brown_oh")
+        self.assertIsNotNone(adapter)
+        curl = adapter.generate_curl_command()
+        self.assertIn("curl", curl)
+        self.assertIn("browncountyclerkofcourts.org", curl)
+
     def test_new_jail_feeds_resolution(self):
         """Verify all 10 new Miami Valley jail feeds resolve from registry."""
         jails = [
@@ -95,14 +119,14 @@ class TestBatchExpansionAdapters(unittest.TestCase):
             self.assertIn("miamivalleyjails.org", curl)
 
     def test_updated_coverage_metrics(self):
-        """Verify updated Ohio coverage summary reflects 88 covered, 14 dual-covered and 0 remaining."""
+        """Verify updated Ohio coverage summary reflects 88 covered, 17 dual-covered and 0 remaining."""
         s = get_ohio_coverage_summary()
         self.assertEqual(s["total_counties"], 88)
         self.assertEqual(s["covered_counties"], 88)
         self.assertEqual(s["remaining_counties"], 0)
-        self.assertEqual(len(s["both"]), 14)
+        self.assertEqual(len(s["both"]), 17)
         self.assertEqual(len(s["court_only"]), 38)
-        self.assertEqual(len(s["jail_only"]), 36)
+        self.assertEqual(len(s["jail_only"]), 33)
         self.assertAlmostEqual(s["percent_covered"], 100.0, delta=0.1)
 
         rem = get_remaining_counties("neither")

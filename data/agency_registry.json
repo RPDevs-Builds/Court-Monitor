@@ -1250,10 +1250,10 @@
       "state": "OH",
       "fips": "39015",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Brown County"
+        "adapter": "brown",
+        "base_url": "http://www.browncountyclerkofcourts.org",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "miami_valley",
@@ -1322,10 +1322,10 @@
       "state": "OH",
       "fips": "39025",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Clermont County"
+        "adapter": "clermont",
+        "base_url": "https://eservices.clermontclerk.org/commonpleas",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "miami_valley",
@@ -1346,10 +1346,10 @@
       "state": "OH",
       "fips": "39027",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Clinton County"
+        "adapter": "clinton",
+        "base_url": "https://www.clintoncountycourts.org",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "miami_valley",
