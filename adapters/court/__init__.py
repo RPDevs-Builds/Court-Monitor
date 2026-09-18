@@ -54,6 +54,9 @@ from adapters.court.pike import PikeCourtAdapter
 from adapters.court.washington import WashingtonCourtAdapter
 from adapters.court.williams import WilliamsCourtAdapter
 from adapters.court.licking import LickingCourtAdapter
+from adapters.court.sandusky import SanduskyCourtAdapter
+from adapters.court.fairfield import FairfieldCourtAdapter
+from adapters.court.defiance import DefianceCourtAdapter
 from core.registry import get_registry
 
 
@@ -75,6 +78,8 @@ def get_court_adapter(county_id: str = "cuyahoga_oh") -> Optional[BaseCourtAdapt
         return LucasCourtAdapter(county_id=county.id)
     elif adapter_type in ("licking", "licking_court", "researchoh"):
         return LickingCourtAdapter(county_id=county.id)
+    elif adapter_type in ("fairfield", "fairfield_court"):
+        return FairfieldCourtAdapter(county_id=county.id)
     elif adapter_type in ("tyler_tech", "odyssey"):
         return TylerCourtAdapter(
             county_id=county.id,
@@ -213,6 +218,11 @@ def get_court_adapter(county_id: str = "cuyahoga_oh") -> Optional[BaseCourtAdapt
             county_id=county.id,
             portal_url=county.court_service.base_url
         )
+    elif adapter_type in ("defiance", "defiance_court"):
+        return DefianceCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
     elif adapter_type in ("fulton", "fulton_court", "fulton_caselook"):
         return FultonCourtAdapter(
             county_id=county.id,
@@ -288,6 +298,11 @@ def get_court_adapter(county_id: str = "cuyahoga_oh") -> Optional[BaseCourtAdapt
             county_id=county.id,
             base_url=county.court_service.base_url
         )
+    elif adapter_type in ("sandusky", "sandusky_court", "sandusky_caselook"):
+        return SanduskyCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
     elif adapter_type in ("courtview", "lake_courtview", "eservices"):
         return CourtViewAdapter(
             county_id=county.id,
@@ -350,6 +365,9 @@ __all__ = [
     "WashingtonCourtAdapter",
     "WilliamsCourtAdapter",
     "LickingCourtAdapter",
+    "FairfieldCourtAdapter",
+    "SanduskyCourtAdapter",
+    "DefianceCourtAdapter",
     "get_court_adapter",
 ]
 

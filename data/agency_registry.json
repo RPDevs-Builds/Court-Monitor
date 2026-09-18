@@ -504,10 +504,10 @@
       "state": "OH",
       "fips": "39039",
       "court_service": {
-        "adapter": null,
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court adapter integration"
+        "adapter": "defiance",
+        "base_url": "https://eservices.defianceohcountycourts.org/eservices",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "ocv_rtjb",
@@ -528,10 +528,10 @@
       "state": "OH",
       "fips": "39045",
       "court_service": {
-        "adapter": null,
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court adapter integration"
+        "adapter": "fairfield",
+        "base_url": "https://portal-ohfairfield.tylertech.cloud/portal",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "ocv_rtjb",
@@ -819,10 +819,10 @@
       "state": "OH",
       "fips": "39143",
       "court_service": {
-        "adapter": null,
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court adapter integration"
+        "adapter": "sandusky",
+        "base_url": "https://sanduskymunicipalcourt.org",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "ocv_rtjb",
