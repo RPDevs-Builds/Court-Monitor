@@ -7,6 +7,10 @@ from adapters.court.base import BaseCourtAdapter
 from adapters.court.cuyahoga import CuyahogaCourtAdapter
 from adapters.court.tyler_tech import TylerCourtAdapter
 from adapters.court.cleveland_muni import ClevelandMunicipalCourtAdapter
+from adapters.court.franklin import FranklinCourtAdapter
+from adapters.court.courtview import CourtViewAdapter
+from adapters.court.lorain import LorainCourtAdapter
+from adapters.court.delaware import DelawareCourtAdapter
 from core.registry import get_registry
 
 
@@ -28,6 +32,27 @@ def get_court_adapter(county_id: str = "cuyahoga_oh") -> Optional[BaseCourtAdapt
             court_name=county.name,
             portal_url=county.court_service.base_url
         )
+    elif adapter_type in ("franklin", "franklin_court", "cio"):
+        return FranklinCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
+    elif adapter_type in ("lorain", "lorain_court"):
+        return LorainCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
+    elif adapter_type in ("delaware", "delaware_court"):
+        return DelawareCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
+    elif adapter_type in ("courtview", "lake_courtview", "eservices"):
+        return CourtViewAdapter(
+            county_id=county.id,
+            court_name=county.name,
+            portal_url=county.court_service.base_url or "https://court.co.delaware.oh.us/eservices"
+        )
 
     return None
 
@@ -37,5 +62,10 @@ __all__ = [
     "CuyahogaCourtAdapter",
     "TylerCourtAdapter",
     "ClevelandMunicipalCourtAdapter",
+    "FranklinCourtAdapter",
+    "CourtViewAdapter",
+    "LorainCourtAdapter",
+    "DelawareCourtAdapter",
     "get_court_adapter",
 ]
+

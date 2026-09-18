@@ -4,7 +4,7 @@ Base interface for Court Docket adapters across Ohio counties.
 
 from abc import ABC, abstractmethod
 from typing import Dict, List, Optional, Any
-from core.models import CaseSummary, DocketEntry
+from core.models import CaseSummary, DocketEntry, CaseParty
 
 
 class BaseCourtAdapter(ABC):

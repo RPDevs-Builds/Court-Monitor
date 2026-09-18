@@ -215,13 +215,13 @@ def main():
 
     elif args.command == "search-name":
         court_adapter = get_court_adapter(args.county)
-        if court_adapter and isinstance(court_adapter, TylerCourtAdapter):
-            if args.waf_token or args.session_id:
+        if court_adapter and args.county != "cuyahoga_oh":
+            if hasattr(court_adapter, "update_cookies") and (args.waf_token or args.session_id):
                 new_c = {}
                 if args.waf_token: new_c["aws-waf-token"] = args.waf_token
                 if args.session_id: new_c["ASP.NET_SessionId"] = args.session_id
                 court_adapter.update_cookies(new_c)
-            print(f"[*] Searching {court_adapter.court_name} for '{args.last}, {args.first}'...")
+            print(f"[*] Searching {getattr(court_adapter, 'court_name', args.county)} for '{args.last}, {args.first}'...")
             cases = court_adapter.search_by_name(last_name=args.last, first_name=args.first)
             if args.json:
                 print(json.dumps([c.model_dump() for c in cases], indent=2))
@@ -233,7 +233,7 @@ def main():
                         [c.case_number, c.title, c.case_type, c.filing_date or "N/A", c.status, c.judge or "N/A"]
                         for c in cases
                     ]
-                    print_table(rows, ["Case Number", "Style / Title", "Type", "Filing Date", "Status", "Judge"], title=f"Cases: {court_adapter.court_name}")
+                    print_table(rows, ["Case Number", "Style / Title", "Type", "Filing Date", "Status", "Judge"], title=f"Cases: {getattr(court_adapter, 'court_name', args.county)}")
         else:
             print(f"[*] Searching for defendant: {args.last}, {args.first} (County: {args.county})...")
             results = client.search_criminal_by_name(
@@ -264,13 +264,13 @@ def main():
     elif args.command in ["search-case", "summary"]:
         court_adapter = get_court_adapter(args.county)
         case_query = args.case or (f"{args.year}-{args.number}" if (args.year and args.number) else (args.number or args.year or ""))
-        if court_adapter and isinstance(court_adapter, TylerCourtAdapter):
-            if args.waf_token or args.session_id:
+        if court_adapter and args.county != "cuyahoga_oh":
+            if hasattr(court_adapter, "update_cookies") and (args.waf_token or args.session_id):
                 new_c = {}
                 if args.waf_token: new_c["aws-waf-token"] = args.waf_token
                 if args.session_id: new_c["ASP.NET_SessionId"] = args.session_id
                 court_adapter.update_cookies(new_c)
-            print(f"[*] Searching {court_adapter.court_name} for Case '{case_query}'...")
+            print(f"[*] Searching {getattr(court_adapter, 'court_name', args.county)} for Case '{case_query}'...")
             summary = court_adapter.search_by_case(case_query)
             if args.json:
                 print(json.dumps(summary.model_dump() if summary else {}, indent=2))
@@ -280,7 +280,7 @@ def main():
                 else:
                     print(f"\n=== Case Summary: {summary.case_number} ===")
                     print(f"Title:     {summary.title}")
-                    print(f"Court:     {court_adapter.court_name}")
+                    print(f"Court:     {getattr(court_adapter, 'court_name', args.county)}")
                     print(f"Type:      {summary.case_type}")
                     print(f"Status:    {summary.status}")
                     print(f"Judge:     {summary.judge or 'N/A'}")
@@ -321,13 +321,13 @@ def main():
     elif args.command == "docket":
         court_adapter = get_court_adapter(args.county)
         case_query = args.case or (f"{args.year}-{args.number}" if (args.year and args.number) else (args.number or args.year or ""))
-        if court_adapter and isinstance(court_adapter, TylerCourtAdapter):
-            if args.waf_token or args.session_id:
+        if court_adapter and args.county != "cuyahoga_oh":
+            if hasattr(court_adapter, "update_cookies") and (args.waf_token or args.session_id):
                 new_c = {}
                 if args.waf_token: new_c["aws-waf-token"] = args.waf_token
                 if args.session_id: new_c["ASP.NET_SessionId"] = args.session_id
                 court_adapter.update_cookies(new_c)
-            print(f"[*] Fetching docket entries for '{case_query}' from {court_adapter.court_name}...")
+            print(f"[*] Fetching docket entries for '{case_query}' from {getattr(court_adapter, 'court_name', args.county)}...")
             entries = court_adapter.get_docket(case_query)
             if args.json:
                 print(json.dumps([e.model_dump() for e in entries], indent=2))
@@ -374,9 +374,11 @@ def main():
     elif args.command == "curl":
         court_adapter = get_court_adapter(args.county)
         if court_adapter:
-            print(court_adapter.generate_curl_command(args.url or ""))
+            custom_url = args.url if args.url != DEFAULT_DOCKET_URL else ""
+            print(court_adapter.generate_curl_command(custom_url))
         else:
             print(client.generate_curl_command(args.url))
+
 
     elif args.command == "watchlist":
         items = monitor.get_watchlist()

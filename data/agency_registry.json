@@ -175,6 +175,36 @@
       },
       "active": true
     },
+    "lorain_oh": {
+      "id": "lorain_oh",
+      "name": "Lorain County Common Pleas Court",
+      "county": "Lorain",
+      "state": "OH",
+      "fips": "39093",
+      "court_service": {
+        "adapter": "lorain",
+        "base_url": "https://coc.loraincountyohio.gov/eservices",
+        "enabled": true,
+        "notes": "Lorain County Common Pleas Court Tyler Odyssey eServices."
+      },
+      "jail_service": null,
+      "active": true
+    },
+    "delaware_oh": {
+      "id": "delaware_oh",
+      "name": "Delaware County Common Pleas Court",
+      "county": "Delaware",
+      "state": "OH",
+      "fips": "39041",
+      "court_service": {
+        "adapter": "delaware",
+        "base_url": "https://court.co.delaware.oh.us/eservices",
+        "enabled": true,
+        "notes": "Delaware County Common Pleas Court Tyler CourtView eServices."
+      },
+      "jail_service": null,
+      "active": true
+    },
     "hamilton_oh": {
       "id": "hamilton_oh",
       "name": "Hamilton County Clerk of Courts & Justice Center",
