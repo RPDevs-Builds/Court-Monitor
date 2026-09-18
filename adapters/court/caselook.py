@@ -114,8 +114,11 @@ class HenschenCaseLookAdapter(BaseCourtAdapter):
                         continue_match = re.search(r'href=[\"\x27](/(?:search|disclaimer)/[^\"\x27]*accept[^\"\x27]*)[\"\x27]', resp.text, re.IGNORECASE)
 
                     if continue_match:
-                        target = continue_match.group(1).lstrip("/")
-                        accept_url = f"{self.base_url}/{target}"
+                        target = continue_match.group(1)
+                        if target.startswith("http://") or target.startswith("https://"):
+                            accept_url = target
+                        else:
+                            accept_url = f"{self.base_url}/{target.lstrip('/')}"
                         r2 = self.session.get(accept_url, verify=self.verify_ssl, timeout=12)
                         if r2.status_code == 200:
                             self._save_session()
@@ -171,23 +174,100 @@ class HenschenCaseLookAdapter(BaseCourtAdapter):
 
                 cases.append(CaseSummary(
                     case_number=case_no,
-                    court_name=self.court_name,
-                    defendant_name=party_name,
+                    county=self.county_id,
+                    title=f"{party_name} ({self.court_name})",
                     filing_date=filed_date,
                     status=status,
                     case_type="Criminal/Traffic" if any(c in case_no for c in ["CR", "TR"]) else "Civil",
-                    charges=[],
-                    raw_data={"county_id": self.county_id, "agency_id": self.agency_id}
+                    parties=[CaseParty(role="Defendant", name=party_name)] if party_name else [],
+                    source_url=f"{self.base_url}/recordSearch.php",
+                    last_updated=datetime.now(timezone.utc).isoformat()
                 ))
+
+        if cases:
+            return cases
+
+        # Check for modern CaseLook card layout (card-header + card-body)
+        for header in soup.find_all(class_=re.compile(r"card-header")):
+            h4 = header.find("h4")
+            if not h4:
+                continue
+            badge = h4.find(class_=re.compile(r"badge"))
+            if badge:
+                badge.decompose()
+            case_no = h4.get_text(strip=True)
+            if not case_no or any(x in case_no.upper() for x in ["MATCHES", "SIGN IN", "CRITERIA", "NOTICE", "DISCLAIMER"]):
+                continue
+
+            body = header.find_next_sibling(class_=re.compile(r"card-body"))
+            if not body:
+                continue
+
+            lines = [line.strip() for line in body.get_text("\n", strip=True).splitlines() if line.strip()]
+            party = "Unknown Party"
+            filed = None
+            ctype = "Criminal/Traffic" if any(k in case_no.upper() for k in ["CR", "TR"]) else "Civil"
+            status = "OPEN"
+            charge = None
+
+            for i, line in enumerate(lines):
+                if line.startswith("Concerning:") and i + 1 < len(lines):
+                    party = lines[i+1]
+                elif line.startswith("Date Filed:") and i + 1 < len(lines):
+                    filed = lines[i+1]
+                elif line.startswith("Case Type:") and i + 1 < len(lines):
+                    ctype = lines[i+1]
+                elif line.startswith("Case Status:") and i + 1 < len(lines):
+                    status = lines[i+1]
+                elif (line.startswith("Violation:") or line.startswith("Cause of Action:")) and i + 1 < len(lines):
+                    charge = lines[i+1]
+
+            title = f"{party} - {charge}" if charge else party
+            detail_link = header.find("a", href=re.compile(r"/record/|/docket/"))
+            source_url = detail_link["href"] if detail_link else f"{self.base_url}/records/{self.agency_id}"
+
+            cases.append(CaseSummary(
+                case_number=case_no,
+                county=self.county_id,
+                title=title,
+                case_type=ctype,
+                filing_date=filed,
+                status=status,
+                parties=[CaseParty(role="Defendant", name=party)] if party != "Unknown Party" else [],
+                source_url=source_url,
+                last_updated=datetime.now(timezone.utc).isoformat()
+            ))
 
         return cases
 
     def search_by_name(self, last_name: str, first_name: str = "") -> List[CaseSummary]:
-        """Search cases by party name."""
+        """Search cases by party name across legacy or modern RESTful portals."""
         self._ensure_session()
         query = f"{last_name}, {first_name}".strip(", ") if first_name else last_name
-        search_url = f"{self.base_url}/recordSearch.php"
 
+        # 1. Try modern RESTful portal endpoint (/records/{agency})
+        modern_url = f"{self.base_url}/records/{self.agency_id}"
+        modern_params = [
+            ("searchType-case", "11"),
+            ("fullName", query),
+            ("caseTypes[]", '["TRC","TRD"]'),
+            ("caseTypes[]", '["CRA","CRB"]'),
+            ("caseTypes[]", '["CVE","CVF","CVG","CVH","CVT"]'),
+            ("caseTypes[]", '["CVI"]'),
+            ("caseTypes[]", '["PRK"]'),
+            ("perPage", "50")
+        ]
+        try:
+            resp = self.session.get(modern_url, params=modern_params, verify=self.verify_ssl, timeout=12)
+            if resp.status_code == 200:
+                results = self.parse_search_results_html(resp.text)
+                if results:
+                    return results
+        except Exception:
+            pass
+
+        # 2. Try classic /recordSearch.php POST endpoint
+        search_url = f"{self.base_url}/recordSearch.php"
         post_data = [
             ("searchName", query),
             ("searchAgency[]", self.agency_id),
@@ -219,9 +299,35 @@ class HenschenCaseLookAdapter(BaseCourtAdapter):
     def search_by_case(self, case_number: str) -> Optional[CaseSummary]:
         """Search case summary by case number."""
         self._ensure_session()
-        search_url = f"{self.base_url}/recordSearch.php"
 
-        # CaseLook accepts numbers only or formatted case numbers
+        # 1. Try modern RESTful portal
+        clean_num = "".join(filter(str.isdigit, case_number)) or case_number
+        modern_url = f"{self.base_url}/records/{self.agency_id}"
+        modern_params = [
+            ("searchType-case", "11"),
+            ("agencyId", self.agency_id),
+            ("caseNumber", clean_num),
+            ("caseTypes[]", '["TRC","TRD"]'),
+            ("caseTypes[]", '["CRA","CRB"]'),
+            ("caseTypes[]", '["CVE","CVF","CVG","CVH","CVT"]'),
+            ("caseTypes[]", '["CVI"]'),
+            ("caseTypes[]", '["PRK"]'),
+            ("perPage", "10")
+        ]
+        try:
+            resp = self.session.get(modern_url, params=modern_params, verify=self.verify_ssl, timeout=12)
+            if resp.status_code == 200:
+                results = self.parse_search_results_html(resp.text)
+                for r in results:
+                    if r.case_number.upper() == case_number.upper() or clean_num in r.case_number:
+                        return r
+                if results:
+                    return results[0]
+        except Exception:
+            pass
+
+        # 2. Try classic /recordSearch.php POST endpoint
+        search_url = f"{self.base_url}/recordSearch.php"
         post_data = [
             ("searchCase", case_number),
             ("searchAgency[]", self.agency_id),
@@ -254,6 +360,39 @@ class HenschenCaseLookAdapter(BaseCourtAdapter):
 
     def get_docket(self, case_number: str) -> List[DocketEntry]:
         """Fetch chronological docket entries for a case."""
+        case = self.search_by_case(case_number)
+        if not case or not case.source_url:
+            return []
+
+        docket_url = case.source_url.replace("/record/", "/docket/")
+        try:
+            resp = self.session.get(docket_url, verify=self.verify_ssl, timeout=12)
+            if resp.status_code == 200:
+                entries = []
+                soup = BeautifulSoup(resp.text, "html.parser")
+                for card in soup.find_all(class_=re.compile(r"card")):
+                    header = card.find(class_=re.compile(r"card-header"))
+                    if header and any(k in header.get_text().upper() for k in ["DOCKET", "ENTRIES"]):
+                        body = card.find(class_=re.compile(r"card-body"))
+                        if body:
+                            lines = [l.strip() for l in body.get_text("\n", strip=True).splitlines() if l.strip()]
+                            seq = 1
+                            curr_date = None
+                            for line in lines:
+                                if re.match(r"^\d{1,2}/\d{1,2}/\d{2,4}$", line):
+                                    curr_date = line
+                                elif curr_date:
+                                    entries.append(DocketEntry(
+                                        sequence_id=seq,
+                                        entry_date=curr_date,
+                                        description=line,
+                                        raw_text=f"{curr_date} - {line}"
+                                    ))
+                                    seq += 1
+                                    curr_date = None
+                return entries
+        except Exception:
+            pass
         return []
 
     def generate_curl_command(self, query: str = "SMITH", search_type: str = "name") -> str:

@@ -384,10 +384,10 @@
       "state": "OH",
       "fips": "39145",
       "court_service": {
-        "adapter": "none",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Scioto County Common Pleas Court"
+        "adapter": "scioto",
+        "base_url": "https://caselook.pmcourt.org",
+        "enabled": true,
+        "name": "Portsmouth Municipal Court"
       },
       "jail_service": {
         "adapter": "ocv_rtjb",
@@ -552,10 +552,10 @@
       "state": "OH",
       "fips": "39047",
       "court_service": {
-        "adapter": null,
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court adapter integration"
+        "adapter": "fayette",
+        "base_url": "http://www.cityofwchmunicourtoh.gov",
+        "enabled": true,
+        "name": "Washington Court House Municipal Court"
       },
       "jail_service": {
         "adapter": "ocv_rtjb",
@@ -648,10 +648,10 @@
       "state": "OH",
       "fips": "39073",
       "court_service": {
-        "adapter": null,
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court adapter integration"
+        "adapter": "hocking",
+        "base_url": "https://municipal.hocking.oh.gov",
+        "enabled": true,
+        "name": "Hocking County Municipal Court"
       },
       "jail_service": {
         "adapter": "ocv_rtjb",

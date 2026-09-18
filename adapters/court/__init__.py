@@ -64,6 +64,9 @@ from adapters.court.clark import ClarkCourtAdapter
 from adapters.court.miami import MiamiCourtAdapter
 from adapters.court.pioneer import PioneerCourtAdapter, WayneCourtAdapter, ColumbianaCourtAdapter
 from adapters.court.champaign import ChampaignCourtAdapter
+from adapters.court.scioto import SciotoCourtAdapter
+from adapters.court.fayette import FayetteCourtAdapter
+from adapters.court.hocking import HockingCourtAdapter
 from core.registry import get_registry
 
 
@@ -350,6 +353,21 @@ def get_court_adapter(county_id: str = "cuyahoga_oh") -> Optional[BaseCourtAdapt
             county_id=county.id,
             portal_url=county.court_service.base_url
         )
+    elif adapter_type in ("scioto", "scioto_court", "portsmouth", "portsmouth_court"):
+        return SciotoCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
+    elif adapter_type in ("fayette", "fayette_court", "wch", "wch_court"):
+        return FayetteCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
+    elif adapter_type in ("hocking", "hocking_court"):
+        return HockingCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
     elif adapter_type in ("pioneer", "benchmark"):
         return PioneerCourtAdapter(
             county_id=county.id,
@@ -430,6 +448,9 @@ __all__ = [
     "WayneCourtAdapter",
     "ColumbianaCourtAdapter",
     "ChampaignCourtAdapter",
+    "SciotoCourtAdapter",
+    "FayetteCourtAdapter",
+    "HockingCourtAdapter",
     "get_court_adapter",
 ]
 

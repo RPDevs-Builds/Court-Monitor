@@ -31,9 +31,9 @@ class TestOhioCountiesDatabaseAndCoverage(unittest.TestCase):
         s = get_ohio_coverage_summary()
         self.assertEqual(s["total_counties"], 88)
         self.assertEqual(s["covered_counties"], 88)
-        self.assertEqual(len(s["both"]), 22)
+        self.assertEqual(len(s["both"]), 25)
         self.assertEqual(len(s["court_only"]), 38)
-        self.assertEqual(len(s["jail_only"]), 28)
+        self.assertEqual(len(s["jail_only"]), 25)
         self.assertEqual(s["remaining_counties"], 0)
         self.assertAlmostEqual(s["percent_covered"], 100.0, delta=0.1)
 
@@ -44,7 +44,7 @@ class TestOhioCountiesDatabaseAndCoverage(unittest.TestCase):
 
         # Court missing
         court_missing = get_remaining_counties("court")
-        self.assertEqual(len(court_missing), 28)
+        self.assertEqual(len(court_missing), 25)
 
         # Jail missing
         jail_missing = get_remaining_counties("jail")
