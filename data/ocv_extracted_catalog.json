@@ -1,0 +1,497 @@
+{
+  "ashland": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/ashland",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a143444805",
+      "app_label": "ACSO",
+      "app_name": "Ashland County Sheriff OH",
+      "app_secret": "29831c4f7279dd2683b268f44be554f5"
+    },
+    "share_url": "https://apps.myocv.com/share/a143444805",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a143444805/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a143444805/"
+  },
+  "ashtabula": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/ashtabula",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a159844047",
+      "app_label": "Ashtabula SO",
+      "app_name": "Ashtabula Co Sheriff OH",
+      "app_secret": "e74ba5a94e8e0783ac693962e926d422"
+    },
+    "share_url": "https://apps.myocv.com/share/a159844047",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a159844047/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a159844047/"
+  },
+  "auglaize": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/auglaize",
+    "main_apk": "com.ocv.a1609.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a160945895",
+      "app_label": "Auglaize Sheriff",
+      "app_name": "Auglaize County Sheriff",
+      "app_secret": "407f03da10442be57ed0c3a70ca1479e"
+    },
+    "share_url": "https://apps.myocv.com/share/a160945895",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a160945895/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a160945895/"
+  },
+  "columbiana": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/columbiana",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a59744432",
+      "app_label": "Columbiana SO",
+      "app_name": "Columbiana County Sheriff OH",
+      "app_secret": "21805511c31a26ce387d53632d55b2b2"
+    },
+    "share_url": "https://apps.myocv.com/share/a59744432",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a59744432/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a59744432/"
+  },
+  "crawford": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/crawford",
+    "main_apk": "com.ocv.a1320.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a132044820",
+      "app_label": "CCSO",
+      "app_name": "Crawford Co Sheriff Office OH",
+      "app_secret": "a6acb81461eabf099a3f98cc390c0e87"
+    },
+    "share_url": "https://apps.myocv.com/share/a132044820",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a132044820/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a132044820/"
+  },
+  "cuyahoga": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/cuyahoga",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a26544113",
+      "app_label": "Cuyahoga Sheriff",
+      "app_name": "Sheriff",
+      "app_secret": "2b5990e2f2c974eb49ad3244ae9551e6"
+    },
+    "share_url": "https://apps.myocv.com/share/a26544113",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a26544113/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a26544113/"
+  },
+  "defiance": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/defiance",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a161043512",
+      "app_label": "DCSO",
+      "app_name": "Defiance County Sheriff OH",
+      "app_secret": "117a4e6c0fe7ec7fbe93cc210496a234"
+    },
+    "share_url": "https://apps.myocv.com/share/a161043512",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a161043512/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a161043512/"
+  },
+  "fairfield": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/fairfield",
+    "main_apk": "com.ocv.fairfieldcountysheriffofficeoh.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a58343130",
+      "app_label": "Fairfield Sheriff",
+      "app_name": "Fairfield County Sheriff Ohio",
+      "app_secret": "6bb38451228fd61960ad116b786a1f39"
+    },
+    "share_url": "https://apps.myocv.com/share/a58343130",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a58343130/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a58343130/"
+  },
+  "fayette": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/fayette",
+    "main_apk": "com.ocv.fayettecountysheriffohio.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a42143160",
+      "app_label": "FAYCOSO",
+      "app_name": "Fayette County Sheriff Ohio",
+      "app_secret": "2a51874f51f2b32d6d55c23269cc9cce"
+    },
+    "share_url": "https://apps.myocv.com/share/a42143160",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a42143160/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a42143160/"
+  },
+  "franklin": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/franklin",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a108543215",
+      "app_label": "FCSO",
+      "app_name": "Franklin County Sheriff OH",
+      "app_secret": "c5970aaf517d68a5a36454e263ebb269"
+    },
+    "share_url": "https://apps.myocv.com/share/a108543215",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a108543215/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a108543215/"
+  },
+  "geauga": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/geauga",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a129044024",
+      "app_label": "Geauga Sheriff",
+      "app_name": "Geauga County Sheriff OH",
+      "app_secret": "7fc91f25e361ff4f808ffd963b8e0d0e"
+    },
+    "share_url": "https://apps.myocv.com/share/a129044024",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a129044024/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a129044024/"
+  },
+  "hancock": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/hancock",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a150345840",
+      "app_label": "Hancock Sheriff",
+      "app_name": "Hancock County Sheriff OH",
+      "app_secret": "ba8c8d6290b44552d05d8e250e4b95d2"
+    },
+    "share_url": "https://apps.myocv.com/share/a150345840",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a150345840/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a150345840/"
+  },
+  "hardin": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/hardin",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a45143326",
+      "app_label": "HCSO",
+      "app_name": "Hardin County Sheriff Ohio",
+      "app_secret": "4a78f136d03267e6640ef1dfe1cb1093"
+    },
+    "share_url": "https://apps.myocv.com/share/a45143326",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a45143326/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a45143326/"
+  },
+  "hocking": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/hocking",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a33143138",
+      "app_label": "Hocking Sheriff",
+      "app_name": "Hocking County Sheriffs Office",
+      "app_secret": "f2fd528d15c812819057926ab967eba7"
+    },
+    "share_url": "https://apps.myocv.com/share/a33143138",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a33143138/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a33143138/"
+  },
+  "holmes": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/holmes",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a37144633",
+      "app_label": "HCSO",
+      "app_name": "Holmes County Sheriff, Ohio",
+      "app_secret": "c87e154fb844fbb79d6d537bf3dfc145"
+    },
+    "share_url": "https://apps.myocv.com/share/a37144633",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a37144633/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a37144633/"
+  },
+  "huron": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/huron",
+    "main_apk": "com.ocv.a965.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a96544857",
+      "app_label": "HCSO",
+      "app_name": "Huron County Sheriff Ohio",
+      "app_secret": "17b9308ce77a55e019843cd77cad9f1c"
+    },
+    "share_url": "https://apps.myocv.com/share/a96544857",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a96544857/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a96544857/"
+  },
+  "jefferson": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/jefferson",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a138043952",
+      "app_label": "JCSO",
+      "app_name": "Jefferson County Sheriff OH",
+      "app_secret": "a2202853089fbff60ec0d9559bfb7342"
+    },
+    "share_url": "https://apps.myocv.com/share/a138043952",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a138043952/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a138043952/"
+  },
+  "lake": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/lake",
+    "main_apk": "com.ocv.lakecountysheriffoh.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a44944077",
+      "app_label": "LakeCoSheriff",
+      "app_name": "Lake Co. OH Sheriff's Office",
+      "app_secret": "aa72a7b14ce256117e6bebb27342c94d"
+    },
+    "share_url": "https://apps.myocv.com/share/a44944077",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a44944077/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a44944077/"
+  },
+  "london": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/london",
+    "main_apk": "com.ocv.londonohpd.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a36043140",
+      "app_label": "London OH Police",
+      "app_name": "London Ohio Police Division",
+      "app_secret": "f6bdf9fef109b6c56299015332774d0e"
+    },
+    "share_url": "https://apps.myocv.com/share/a36043140",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a36043140/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a36043140/"
+  },
+  "madison": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/madison",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a61543140",
+      "app_label": "Madison Sheriff",
+      "app_name": "Madison County Sheriff Ohio",
+      "app_secret": "0fee1497ba65687da0e2db8a7e553150"
+    },
+    "share_url": "https://apps.myocv.com/share/a61543140",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a61543140/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a61543140/"
+  },
+  "morrow": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/morrow",
+    "main_apk": "com.ocv.morrowcountyoh.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a43543015",
+      "app_label": "Morrow Co SO",
+      "app_name": "Morrow County Sheriff Ohio",
+      "app_secret": "fd03aff8f8162ed8cb3a8eb148a0da17"
+    },
+    "share_url": "https://apps.myocv.com/share/a43543015",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a43543015/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a43543015/"
+  },
+  "plain_city": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/plain_city",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a34643064",
+      "app_label": "Plain City App",
+      "app_name": "Plain City, OH Police & Govt",
+      "app_secret": "bf21a63475eaa348a2e9370c7800ce8a"
+    },
+    "share_url": "https://apps.myocv.com/share/a34643064",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a34643064/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a34643064/"
+  },
+  "portsmouth": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/portsmouth",
+    "main_apk": "com.ocv.portsmouthpoliceoh.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a52745219",
+      "app_label": "Portsmouth PD",
+      "app_name": "Portsmouth Police Ohio",
+      "app_secret": "adc98093eaefb2a78fabf0408cd7bce4"
+    },
+    "share_url": "https://apps.myocv.com/share/a52745219",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a52745219/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a52745219/"
+  },
+  "putnam": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/putnam",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a157345875",
+      "app_label": "Putnam Sheriff",
+      "app_name": "Putnam County Sheriff Ohio",
+      "app_secret": "7627ee1e03be22517917d660e71f5e3a"
+    },
+    "share_url": "https://apps.myocv.com/share/a157345875",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a157345875/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a157345875/"
+  },
+  "sandusky": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/sandusky",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a88343420",
+      "app_label": "Sandusky County Sheriff Office",
+      "app_name": "Sandusky County Sheriff - OH",
+      "app_secret": "7ff114c593819391d17ca676f1528453"
+    },
+    "share_url": "https://apps.myocv.com/share/a88343420",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a88343420/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a88343420/"
+  },
+  "seneca": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/seneca",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a57144883",
+      "app_label": "SCSO",
+      "app_name": "Seneca County Sheriff Ohio",
+      "app_secret": "50769f4966ee8b6c03db31f5bffe2f11"
+    },
+    "share_url": "https://apps.myocv.com/share/a57144883",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a57144883/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a57144883/"
+  },
+  "stark": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/stark",
+    "main_apk": "com.ocv.starkcountysheriff.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a54444705",
+      "app_label": "Stark Sheriff",
+      "app_name": "Stark County Sheriff's Office",
+      "app_secret": "1964d2fe3cb7afc1f09a3ef707b85552"
+    },
+    "share_url": "https://apps.myocv.com/share/a54444705",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a54444705/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a54444705/"
+  },
+  "trumbull": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/trumbull",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a111644483",
+      "app_label": "Trumbull Sheriff",
+      "app_name": "Trumbull County Sheriff Ohio",
+      "app_secret": "1c5d1fae275946af4b95d5feb9c75b88"
+    },
+    "share_url": "https://apps.myocv.com/share/a111644483",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a111644483/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a111644483/"
+  },
+  "tuscarawas": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/tuscarawas",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a150244663",
+      "app_label": "TCSO",
+      "app_name": "Tuscarawas County Sheriff OH",
+      "app_secret": "8be795e5ec191b61b2b1be3f322598c2"
+    },
+    "share_url": "https://apps.myocv.com/share/a150244663",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a150244663/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a150244663/"
+  },
+  "van_wert": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/van_wert",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a115345891",
+      "app_label": "Van Wert Sheriff",
+      "app_name": "Van Wert County Sheriff OH",
+      "app_secret": "e643ca0ecb23ef9104fa33caa3afb0d1"
+    },
+    "share_url": "https://apps.myocv.com/share/a115345891",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a115345891/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a115345891/"
+  },
+  "vermilion_il": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/vermilion_il",
+    "main_apk": "com.ocv.a1628.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a162861832",
+      "app_label": "VCSD",
+      "app_name": "Vermilion County Sheriff, IL",
+      "app_secret": "2be1b40c0de2f03bd05425e76c0252a3"
+    },
+    "share_url": "https://apps.myocv.com/share/a162861832",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a162861832/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a162861832/"
+  },
+  "wayne": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/wayne",
+    "main_apk": "base.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a114644691",
+      "app_label": "WCSO OH",
+      "app_name": "Wayne County Sheriff Ohio",
+      "app_secret": "e2a18317b716a7376c873bcc6e0baddf"
+    },
+    "share_url": "https://apps.myocv.com/share/a114644691",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a114644691/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a114644691/"
+  },
+  "wyandot": {
+    "folder": "/home/llmuser/projects/court-monitor/apk/wyandot",
+    "main_apk": "com.ocv.wayndotCountyOHSheriff.apk",
+    "metadata": {
+      "appClientId": "2g8k209ihobail61dihssi48l2",
+      "appClientSecret": "mn18889m9495s31ciblbeb3ip5j5dt4em4ih9pp8sjd0u1mceeh",
+      "app_id": "a57243351",
+      "app_label": "WCSO",
+      "app_name": "Wyandot County Sheriff",
+      "app_secret": "5119519f411c4077a03ae571cec89cf9"
+    },
+    "share_url": "https://apps.myocv.com/share/a57243351",
+    "rtjb_feed_url": "https://apps.myocv.com/feed/rtjb/a57243351/Inmates",
+    "s3_base": "https://s3.amazonaws.com/myocv/ocvapps/a57243351/"
+  }
+}

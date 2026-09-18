@@ -1,0 +1,862 @@
+{
+  "counties": {
+    "cleveland_muni_oh": {
+      "id": "cleveland_muni_oh",
+      "name": "Cleveland Municipal Court",
+      "county": "Cuyahoga",
+      "state": "OH",
+      "fips": "39035",
+      "court_service": {
+        "adapter": "cleveland_muni",
+        "base_url": "https://portal-ohcleveland.tylertech.cloud/CMCPORTAL",
+        "enabled": true,
+        "notes": "Tyler Technologies Odyssey Portal (CMCPORTAL) public records access for Cleveland Municipal Court."
+      },
+      "jail_service": null,
+      "active": true
+    },
+    "cuyahoga_oh": {
+      "id": "cuyahoga_oh",
+      "name": "Cuyahoga County Court of Common Pleas & Sheriff",
+      "county": "Cuyahoga",
+      "state": "OH",
+      "fips": "39035",
+      "court_service": {
+        "adapter": "cuyahoga",
+        "base_url": "https://cpdocket.cp.cuyahogacounty.gov",
+        "enabled": true,
+        "notes": "Full criminal, civil, and appellate docket lookup via automated ASP.NET session management."
+      },
+      "jail_service": {
+        "adapter": "ocv_s3",
+        "feed_type": "direct_s3_json",
+        "app_id": "a26544113",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a26544113/Inmates",
+        "fallback_url": "https://apps.myocv.com/feed/rtjb/a26544113/Inmates",
+        "enabled": true,
+        "notes": "Real-time JMS full roster export in structured JSON (~1,680+ records)."
+      },
+      "active": true
+    },
+    "lake_oh": {
+      "id": "lake_oh",
+      "name": "Lake County Clerk of Courts & Sheriff's Office",
+      "county": "Lake",
+      "state": "OH",
+      "fips": "39085",
+      "court_service": {
+        "adapter": "lake_courtview",
+        "base_url": "https://www.lakecountyohio.gov/clerk-of-courts/",
+        "enabled": true,
+        "notes": "Common Pleas and Municipal Court public search."
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a44944077",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a44944077/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Lake County Sheriff OCV mobile inmate feed."
+      },
+      "active": true
+    },
+    "wayne_oh": {
+      "id": "wayne_oh",
+      "name": "Wayne County Sheriff's Office",
+      "county": "Wayne",
+      "state": "OH",
+      "fips": "39169",
+      "court_service": {
+        "adapter": "wayne_court",
+        "base_url": "https://waynecourts.org",
+        "enabled": false,
+        "notes": "Common Pleas case records."
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a114644691",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a114644691/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Wayne County Sheriff OCV mobile inmate feed."
+      },
+      "active": true
+    },
+    "stark_oh": {
+      "id": "stark_oh",
+      "name": "Stark County Sheriff's Office",
+      "county": "Stark",
+      "state": "OH",
+      "fips": "39151",
+      "court_service": {
+        "adapter": "stark_court",
+        "base_url": "https://www.starkcountyohio.gov/government/offices/clerk_of_courts/",
+        "enabled": false,
+        "notes": "Stark County Clerk of Courts."
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a54444705",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a54444705/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Stark County Sheriff OCV mobile inmate feed."
+      },
+      "active": true
+    },
+    "ashtabula_oh": {
+      "id": "ashtabula_oh",
+      "name": "Ashtabula County Sheriff's Office",
+      "county": "Ashtabula",
+      "state": "OH",
+      "fips": "39007",
+      "court_service": {
+        "adapter": "ashtabula_court",
+        "base_url": "https://www.ashtabulacounty.us/",
+        "enabled": false,
+        "notes": "Ashtabula County Court of Common Pleas."
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a159844047",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a159844047/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Ashtabula County Sheriff OCV mobile inmate feed."
+      },
+      "active": true
+    },
+    "summit_oh": {
+      "id": "summit_oh",
+      "name": "Summit County Clerk of Courts & Sheriff's Office",
+      "county": "Summit",
+      "state": "OH",
+      "fips": "39153",
+      "court_service": {
+        "adapter": "summit",
+        "base_url": "https://clerkweb.summitoh.net/",
+        "enabled": true,
+        "notes": "Summit County ClerkWeb ASP case search portal."
+      },
+      "jail_service": {
+        "adapter": "summit",
+        "feed_type": "web_scrape",
+        "primary_url": "https://sheriff.summitoh.net/",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Summit County Sheriff Jail Inmate Roster."
+      },
+      "active": true
+    },
+    "franklin_oh": {
+      "id": "franklin_oh",
+      "name": "Franklin County Clerk of Courts & Sheriff's Office",
+      "county": "Franklin",
+      "state": "OH",
+      "fips": "39049",
+      "court_service": {
+        "adapter": "franklin",
+        "base_url": "https://fcdcfcjs.co.franklin.oh.us/CaseInformationOnline/",
+        "enabled": true,
+        "notes": "Franklin County Case Information Online (CIO)."
+      },
+      "jail_service": {
+        "adapter": "franklin",
+        "feed_type": "web_scrape",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a108543215/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Franklin County Sheriff Inmate Information search.",
+        "app_id": "a108543215"
+      },
+      "active": true
+    },
+    "hamilton_oh": {
+      "id": "hamilton_oh",
+      "name": "Hamilton County Clerk of Courts & Justice Center",
+      "county": "Hamilton",
+      "state": "OH",
+      "fips": "39061",
+      "court_service": {
+        "adapter": "hamilton",
+        "base_url": "https://www.courtclerk.org/",
+        "enabled": true,
+        "notes": "Hamilton County CourtClerk case docket system."
+      },
+      "jail_service": {
+        "adapter": "hamilton",
+        "feed_type": "web_scrape",
+        "primary_url": "https://www.hcso.org/inmate-search/",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Hamilton County Sheriff Inmate search."
+      },
+      "active": true
+    },
+    "odrc_statewide": {
+      "id": "odrc_statewide",
+      "name": "Ohio Department of Rehabilitation and Correction (ODRC)",
+      "county": "Statewide",
+      "state": "OH",
+      "fips": "39000",
+      "court_service": null,
+      "jail_service": {
+        "adapter": "odrc",
+        "feed_type": "odrc_api",
+        "primary_url": "https://appgateway.drc.ohio.gov/OffenderSearch",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Statewide Ohio prison inmates, parole, post-release control, and APA supervision."
+      },
+      "active": true
+    },
+    "huron_oh": {
+      "id": "huron_oh",
+      "name": "Huron County Sheriff Office",
+      "county": "Huron",
+      "state": "OH",
+      "fips": "39077",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Huron County Common Pleas records"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a96544857",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a96544857/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Huron County Sheriff OCV mobile inmate feed."
+      },
+      "active": true
+    },
+    "auglaize_oh": {
+      "id": "auglaize_oh",
+      "name": "Auglaize County Sheriff Office",
+      "county": "Auglaize",
+      "state": "OH",
+      "fips": "39011",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Auglaize County Court records"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a160945895",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a160945895/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Auglaize County Sheriff OCV mobile inmate feed."
+      },
+      "active": true
+    },
+    "morrow_oh": {
+      "id": "morrow_oh",
+      "name": "Morrow County Sheriff Office",
+      "county": "Morrow",
+      "state": "OH",
+      "fips": "39117",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Morrow County Court records"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a43543015",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a43543015/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Morrow County Sheriff OCV mobile inmate feed."
+      },
+      "active": true
+    },
+    "wyandot_oh": {
+      "id": "wyandot_oh",
+      "name": "Wyandot County Sheriff Office",
+      "county": "Wyandot",
+      "state": "OH",
+      "fips": "39175",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Wyandot County Court records"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a57243351",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a57243351/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Wyandot County Sheriff OCV mobile inmate feed."
+      },
+      "active": true
+    },
+    "vermilion_il": {
+      "id": "vermilion_il",
+      "name": "Vermilion County Sheriff Office",
+      "county": "Vermilion",
+      "state": "IL",
+      "fips": "17183",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Illinois 5th Judicial Circuit Court"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a162861832",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a162861832/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Vermilion County Sheriff (Illinois) OCV mobile inmate feed."
+      },
+      "active": true
+    },
+    "scioto_oh": {
+      "id": "scioto_oh",
+      "name": "Scioto County / Portsmouth Police Department",
+      "county": "Scioto",
+      "state": "OH",
+      "fips": "39145",
+      "court_service": {
+        "adapter": "none",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Scioto County Common Pleas Court"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a52745219",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a52745219/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "Portsmouth Police / Scioto County public safety OCV feed."
+      },
+      "active": true
+    },
+    "madison_oh": {
+      "id": "madison_oh",
+      "name": "Madison County / London Police Division",
+      "county": "Madison",
+      "state": "OH",
+      "fips": "39097",
+      "court_service": {
+        "adapter": "none",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Madison County Common Pleas Court"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a61543140",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a61543140/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "London Police / Madison County public safety OCV feed."
+      },
+      "active": true
+    },
+    "ashland_oh": {
+      "id": "ashland_oh",
+      "name": "Ashland County Sheriff OH",
+      "county": "Ashland",
+      "state": "OH",
+      "fips": "39005",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a143444805",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a143444805/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from ashland APK."
+      },
+      "active": true
+    },
+    "columbiana_oh": {
+      "id": "columbiana_oh",
+      "name": "Columbiana County Sheriff OH",
+      "county": "Columbiana",
+      "state": "OH",
+      "fips": "39029",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a59744432",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a59744432/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from columbiana APK."
+      },
+      "active": true
+    },
+    "crawford_oh": {
+      "id": "crawford_oh",
+      "name": "Crawford Co Sheriff Office OH",
+      "county": "Crawford",
+      "state": "OH",
+      "fips": "39033",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a132044820",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a132044820/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from crawford APK."
+      },
+      "active": true
+    },
+    "defiance_oh": {
+      "id": "defiance_oh",
+      "name": "Defiance County Sheriff OH",
+      "county": "Defiance",
+      "state": "OH",
+      "fips": "39039",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a161043512",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a161043512/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from defiance APK."
+      },
+      "active": true
+    },
+    "fairfield_oh": {
+      "id": "fairfield_oh",
+      "name": "Fairfield County Sheriff Ohio",
+      "county": "Fairfield",
+      "state": "OH",
+      "fips": "39045",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a58343130",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a58343130/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from fairfield APK."
+      },
+      "active": true
+    },
+    "fayette_oh": {
+      "id": "fayette_oh",
+      "name": "Fayette County Sheriff Ohio",
+      "county": "Fayette",
+      "state": "OH",
+      "fips": "39047",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a42143160",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a42143160/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from fayette APK."
+      },
+      "active": true
+    },
+    "geauga_oh": {
+      "id": "geauga_oh",
+      "name": "Geauga County Sheriff OH",
+      "county": "Geauga",
+      "state": "OH",
+      "fips": "39055",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a129044024",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a129044024/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from geauga APK."
+      },
+      "active": true
+    },
+    "hancock_oh": {
+      "id": "hancock_oh",
+      "name": "Hancock County Sheriff OH",
+      "county": "Hancock",
+      "state": "OH",
+      "fips": "39063",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a150345840",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a150345840/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from hancock APK."
+      },
+      "active": true
+    },
+    "hardin_oh": {
+      "id": "hardin_oh",
+      "name": "Hardin County Sheriff Ohio",
+      "county": "Hardin",
+      "state": "OH",
+      "fips": "39065",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a45143326",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a45143326/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from hardin APK."
+      },
+      "active": true
+    },
+    "hocking_oh": {
+      "id": "hocking_oh",
+      "name": "Hocking County Sheriffs Office",
+      "county": "Hocking",
+      "state": "OH",
+      "fips": "39073",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a33143138",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a33143138/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from hocking APK."
+      },
+      "active": true
+    },
+    "holmes_oh": {
+      "id": "holmes_oh",
+      "name": "Holmes County Sheriff, Ohio",
+      "county": "Holmes",
+      "state": "OH",
+      "fips": "39075",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a37144633",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a37144633/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from holmes APK."
+      },
+      "active": true
+    },
+    "jefferson_oh": {
+      "id": "jefferson_oh",
+      "name": "Jefferson County Sheriff OH",
+      "county": "Jefferson",
+      "state": "OH",
+      "fips": "39081",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a138043952",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a138043952/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from jefferson APK."
+      },
+      "active": true
+    },
+    "london_oh": {
+      "id": "london_oh",
+      "name": "London Ohio Police Division",
+      "county": "London",
+      "state": "OH",
+      "fips": "39097",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a36043140",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a36043140/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from london APK."
+      },
+      "active": true
+    },
+    "plain_city_oh": {
+      "id": "plain_city_oh",
+      "name": "Plain City, OH Police & Govt",
+      "county": "Plain City",
+      "state": "OH",
+      "fips": "39097",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a34643064",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a34643064/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from plain_city APK."
+      },
+      "active": true
+    },
+    "portsmouth_oh": {
+      "id": "portsmouth_oh",
+      "name": "Portsmouth Police Ohio",
+      "county": "Portsmouth",
+      "state": "OH",
+      "fips": "39145",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a52745219",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a52745219/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from portsmouth APK."
+      },
+      "active": true
+    },
+    "putnam_oh": {
+      "id": "putnam_oh",
+      "name": "Putnam County Sheriff Ohio",
+      "county": "Putnam",
+      "state": "OH",
+      "fips": "39137",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a157345875",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a157345875/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from putnam APK."
+      },
+      "active": true
+    },
+    "sandusky_oh": {
+      "id": "sandusky_oh",
+      "name": "Sandusky County Sheriff - OH",
+      "county": "Sandusky",
+      "state": "OH",
+      "fips": "39143",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a88343420",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a88343420/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from sandusky APK."
+      },
+      "active": true
+    },
+    "seneca_oh": {
+      "id": "seneca_oh",
+      "name": "Seneca County Sheriff Ohio",
+      "county": "Seneca",
+      "state": "OH",
+      "fips": "39147",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a57144883",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a57144883/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from seneca APK."
+      },
+      "active": true
+    },
+    "trumbull_oh": {
+      "id": "trumbull_oh",
+      "name": "Trumbull County Sheriff Ohio",
+      "county": "Trumbull",
+      "state": "OH",
+      "fips": "39155",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a111644483",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a111644483/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from trumbull APK."
+      },
+      "active": true
+    },
+    "tuscarawas_oh": {
+      "id": "tuscarawas_oh",
+      "name": "Tuscarawas County Sheriff OH",
+      "county": "Tuscarawas",
+      "state": "OH",
+      "fips": "39157",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a150244663",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a150244663/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from tuscarawas APK."
+      },
+      "active": true
+    },
+    "van_wert_oh": {
+      "id": "van_wert_oh",
+      "name": "Van Wert County Sheriff OH",
+      "county": "Van Wert",
+      "state": "OH",
+      "fips": "39161",
+      "court_service": {
+        "adapter": null,
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court adapter integration"
+      },
+      "jail_service": {
+        "adapter": "ocv_rtjb",
+        "feed_type": "rtjb_feed",
+        "app_id": "a115345891",
+        "primary_url": "https://apps.myocv.com/feed/rtjb/a115345891/Inmates",
+        "fallback_url": null,
+        "enabled": true,
+        "notes": "OCV mobile inmate feed extracted from van_wert APK."
+      },
+      "active": true
+    }
+  }
+}
