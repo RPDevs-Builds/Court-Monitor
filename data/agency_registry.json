@@ -480,10 +480,10 @@
       "state": "OH",
       "fips": "39033",
       "court_service": {
-        "adapter": null,
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court adapter integration"
+        "adapter": "crawford",
+        "base_url": "https://crawfordcountymuni.org",
+        "enabled": true,
+        "notes": "Henschen CaseLook Court Records (Bucyrus, OH)"
       },
       "jail_service": {
         "adapter": "ocv_rtjb",
@@ -1418,10 +1418,10 @@
       "state": "OH",
       "fips": "39051",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Fulton County"
+        "adapter": "fulton",
+        "base_url": "https://pa.fultoncountyoh.com",
+        "enabled": true,
+        "notes": "Henschen CaseLook Court Records (Wauseon, OH)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1432,7 +1432,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Fulton County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "gallia_oh": {
@@ -1610,10 +1610,10 @@
       "state": "OH",
       "fips": "39087",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Lawrence County"
+        "adapter": "lawrence",
+        "base_url": "https://www.lawcomunicourt.com",
+        "enabled": true,
+        "notes": "Henschen CaseLook Court Records (Ironton, OH)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1624,7 +1624,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Lawrence County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "licking_oh": {
@@ -1730,10 +1730,10 @@
       "state": "OH",
       "fips": "39105",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Meigs County"
+        "adapter": "meigs",
+        "base_url": "https://meigseaccess.com/eservices",
+        "enabled": true,
+        "notes": "Equivant CourtView eServices (Pomeroy, OH)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1744,7 +1744,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Meigs County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "mercer_oh": {
@@ -1778,10 +1778,10 @@
       "state": "OH",
       "fips": "39111",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Monroe County"
+        "adapter": "monroe",
+        "base_url": "https://access.monroecountyohio.com",
+        "enabled": true,
+        "notes": "Henschen CaseLook Court Records (Woodsfield, OH)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1792,7 +1792,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Monroe County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "morgan_oh": {
@@ -1850,10 +1850,10 @@
       "state": "OH",
       "fips": "39121",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Noble County"
+        "adapter": "noble",
+        "base_url": "http://caselook.noblecc.org",
+        "enabled": true,
+        "notes": "Henschen CaseLook Court Records (Caldwell, OH)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1864,7 +1864,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Noble County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "ottawa_oh": {
@@ -2090,10 +2090,10 @@
       "state": "OH",
       "fips": "39163",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Vinton County"
+        "adapter": "vinton",
+        "base_url": "https://caselook.vintoncountycourt.com",
+        "enabled": true,
+        "notes": "Henschen CaseLook Court Records (McArthur, OH)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -2104,7 +2104,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Vinton County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "washington_oh": {
