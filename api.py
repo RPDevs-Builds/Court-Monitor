@@ -22,7 +22,9 @@ from core.db import (
     run_correlation_engine,
     record_inmates_snapshot,
     get_db,
-    normalize_name
+    normalize_name,
+    get_ohio_coverage_summary,
+    get_remaining_counties,
 )
 
 app = FastAPI(
@@ -85,7 +87,31 @@ def list_counties(active_only: bool = True):
     return [c.model_dump() for c in registry.list_counties(active_only=active_only)]
 
 
+@app.get("/api/counties/coverage")
+@app.get("/api/counties/coverage/summary")
+def get_counties_coverage_summary():
+    """Get instant coverage statistics across all 88 Ohio counties directly from SQLite."""
+    return get_ohio_coverage_summary()
+
+
+@app.get("/api/counties/remaining")
+@app.get("/api/counties/coverage/remaining")
+def get_counties_remaining(
+    type: str = Query("neither", description="Filter type: neither (default), court, jail, all")
+):
+    """Instantly query remaining uncovered counties from SQLite."""
+    summary = get_ohio_coverage_summary()
+    remaining = get_remaining_counties(type)
+    return {
+        "summary": summary,
+        "filter": type,
+        "count": len(remaining),
+        "remaining_counties": remaining
+    }
+
+
 @app.get("/api/counties/{county_id}")
+
 def get_county_details(county_id: str):
     """Get integration details for a specific county."""
     county = registry.get_county(county_id)

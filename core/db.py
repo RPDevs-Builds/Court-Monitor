@@ -162,6 +162,13 @@ def init_db(db_path: Path = DB_PATH) -> None:
 
         # Migration check for existing databases
         cursor = conn.cursor()
+        cursor.execute("PRAGMA table_info(jurisdictions)")
+        j_cols = {col[1] for col in cursor.fetchall()}
+        if "jurisdiction_type" not in j_cols:
+            cursor.execute("ALTER TABLE jurisdictions ADD COLUMN jurisdiction_type TEXT DEFAULT 'county'")
+        if "parent_county_id" not in j_cols:
+            cursor.execute("ALTER TABLE jurisdictions ADD COLUMN parent_county_id TEXT")
+
         cursor.execute("PRAGMA table_info(inmates_history)")
         existing_cols = {col[1] for col in cursor.fetchall()}
         if "dob" not in existing_cols:
@@ -172,6 +179,7 @@ def init_db(db_path: Path = DB_PATH) -> None:
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_inmates_inmate_id ON inmates_history(inmate_id)")
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_inmates_age ON inmates_history(age)")
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_inmates_dob ON inmates_history(dob)")
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_jurisdictions_state_type ON jurisdictions(state, jurisdiction_type)")
 
 
 
@@ -186,15 +194,18 @@ def sync_registry_to_db(registry_data: Dict[str, Any], db_path: Path = DB_PATH) 
             conn.execute("""
             INSERT INTO jurisdictions (
                 county_id, county, state, name, fips,
+                jurisdiction_type, parent_county_id,
                 court_adapter, court_base_url, court_enabled,
                 jail_adapter, jail_feed_type, jail_app_id, jail_primary_url, jail_enabled,
                 raw_metadata, created_at
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(county_id) DO UPDATE SET
                 county = excluded.county,
                 state = excluded.state,
                 name = excluded.name,
                 fips = excluded.fips,
+                jurisdiction_type = excluded.jurisdiction_type,
+                parent_county_id = excluded.parent_county_id,
                 court_adapter = excluded.court_adapter,
                 court_base_url = excluded.court_base_url,
                 court_enabled = excluded.court_enabled,
@@ -210,6 +221,8 @@ def sync_registry_to_db(registry_data: Dict[str, Any], db_path: Path = DB_PATH) 
                 data.get("state", "OH"),
                 data.get("name", ""),
                 data.get("fips", ""),
+                data.get("jurisdiction_type", "county"),
+                data.get("parent_county_id"),
                 c_srv.get("adapter", "none"),
                 c_srv.get("base_url"),
                 1 if c_srv.get("enabled", False) else 0,
@@ -806,3 +819,108 @@ def get_db_stats(db_path: Path = DB_PATH) -> Dict[str, Any]:
         "database_file": str(db_path),
         "file_size_bytes": db_path.stat().st_size if db_path.exists() else 0
     }
+
+
+def get_ohio_coverage_summary(db_path: Path = DB_PATH) -> Dict[str, Any]:
+    """
+    Generate instant (<2ms) coverage summary across Ohio's 88 counties.
+    Categorizes counties into:
+      - both: court_enabled = 1 AND jail_enabled = 1
+      - court_only: court_enabled = 1 AND jail_enabled = 0
+      - jail_only: court_enabled = 0 AND jail_enabled = 1
+      - neither: court_enabled = 0 AND jail_enabled = 0 (unmapped)
+    """
+    with get_db(db_path) as conn:
+        rows = conn.execute("""
+            SELECT county_id, county, name, fips, court_adapter, court_enabled, jail_adapter, jail_enabled
+            FROM jurisdictions
+            WHERE state = 'OH' AND (jurisdiction_type = 'county' OR jurisdiction_type IS NULL)
+            ORDER BY county ASC
+        """).fetchall()
+
+    both = []
+    court_only = []
+    jail_only = []
+    neither = []
+
+    for r in rows:
+        item = {
+            "county_id": r["county_id"],
+            "county": r["county"],
+            "name": r["name"],
+            "fips": r["fips"],
+            "court_adapter": r["court_adapter"],
+            "court_enabled": bool(r["court_enabled"]),
+            "jail_adapter": r["jail_adapter"],
+            "jail_enabled": bool(r["jail_enabled"]),
+        }
+        if r["court_enabled"] and r["jail_enabled"]:
+            both.append(item)
+        elif r["court_enabled"]:
+            court_only.append(item)
+        elif r["jail_enabled"]:
+            jail_only.append(item)
+        else:
+            neither.append(item)
+
+    total_counties = len(rows)
+    total_covered = len(both) + len(court_only) + len(jail_only)
+    percent_covered = round((total_covered / total_counties * 100), 1) if total_counties else 0.0
+
+    return {
+        "total_counties": total_counties,
+        "covered_counties": total_covered,
+        "remaining_counties": len(neither),
+        "percent_covered": percent_covered,
+        "both": both,
+        "court_only": court_only,
+        "jail_only": jail_only,
+        "neither": neither,
+    }
+
+
+def get_remaining_counties(
+    uncovered_type: str = "neither",
+    db_path: Path = DB_PATH
+) -> List[Dict[str, Any]]:
+    """
+    Instantly query counties from SQLite with missing feeds.
+    uncovered_type options:
+      - 'neither' (default): completely unmapped (no court AND no jail)
+      - 'court': missing court docket coverage (court_enabled = 0)
+      - 'jail': missing jail custody coverage (jail_enabled = 0)
+      - 'all': any county missing at least one feed (court_enabled = 0 OR jail_enabled = 0)
+    """
+    where_clauses = {
+        "neither": "court_enabled = 0 AND jail_enabled = 0",
+        "court": "court_enabled = 0",
+        "jail": "jail_enabled = 0",
+        "all": "court_enabled = 0 OR jail_enabled = 0",
+    }
+    clause = where_clauses.get(uncovered_type.lower(), where_clauses["neither"])
+
+    with get_db(db_path) as conn:
+        rows = conn.execute(f"""
+            SELECT county_id, county, name, fips, court_adapter, court_enabled, jail_adapter, jail_enabled
+            FROM jurisdictions
+            WHERE state = 'OH' AND (jurisdiction_type = 'county' OR jurisdiction_type IS NULL)
+              AND ({clause})
+            ORDER BY county ASC
+        """).fetchall()
+
+        results = []
+        for r in rows:
+            results.append({
+                "county_id": r["county_id"],
+                "county": r["county"],
+                "name": r["name"],
+                "fips": r["fips"],
+                "court_enabled": bool(r["court_enabled"]),
+                "jail_enabled": bool(r["jail_enabled"]),
+                "missing_court": not bool(r["court_enabled"]),
+                "missing_jail": not bool(r["jail_enabled"]),
+                "court_adapter": r["court_adapter"],
+                "jail_adapter": r["jail_adapter"],
+            })
+        return results
+

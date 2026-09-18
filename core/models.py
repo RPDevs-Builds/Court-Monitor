@@ -76,8 +76,8 @@ class CourtServiceConfig(BaseModel):
 
 
 class JailServiceConfig(BaseModel):
-    adapter: str  # e.g., 'ocv_s3', 'ocv_rtjb', 'summit_web', 'odrc_portal'
-    feed_type: str  # 'direct_s3_json', 'rtjb_feed', 'web_scrape', 'odrc_api'
+    adapter: Optional[str] = "none"  # e.g., 'ocv_s3', 'ocv_rtjb', 'summit_web', 'odrc_portal', 'miami_valley'
+    feed_type: Optional[str] = None  # 'direct_s3_json', 'rtjb_feed', 'web_scrape', 'odrc_api'
     app_id: Optional[str] = None
     primary_url: Optional[str] = None
     fallback_url: Optional[str] = None
@@ -91,9 +91,12 @@ class CountyConfig(BaseModel):
     county: str
     state: str = "OH"
     fips: Optional[str] = None
+    jurisdiction_type: Optional[str] = "county"
+    parent_county_id: Optional[str] = None
     court_service: Optional[CourtServiceConfig] = None
     jail_service: Optional[JailServiceConfig] = None
     active: bool = True
+
 
 
 class WatchlistItem(BaseModel):

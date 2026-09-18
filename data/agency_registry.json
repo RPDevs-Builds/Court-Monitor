@@ -13,7 +13,9 @@
         "notes": "Tyler Technologies Odyssey Portal (CMCPORTAL) public records access for Cleveland Municipal Court."
       },
       "jail_service": null,
-      "active": true
+      "active": true,
+      "parent_county_id": "cuyahoga_oh",
+      "jurisdiction_type": "municipal_court"
     },
     "cuyahoga_oh": {
       "id": "cuyahoga_oh",
@@ -36,7 +38,8 @@
         "enabled": true,
         "notes": "Real-time JMS full roster export in structured JSON (~1,680+ records)."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "lake_oh": {
       "id": "lake_oh",
@@ -59,7 +62,8 @@
         "enabled": true,
         "notes": "Lake County Sheriff OCV mobile inmate feed."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "wayne_oh": {
       "id": "wayne_oh",
@@ -82,7 +86,8 @@
         "enabled": true,
         "notes": "Wayne County Sheriff OCV mobile inmate feed."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "stark_oh": {
       "id": "stark_oh",
@@ -105,7 +110,8 @@
         "enabled": true,
         "notes": "Stark County Sheriff OCV mobile inmate feed."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "ashtabula_oh": {
       "id": "ashtabula_oh",
@@ -128,7 +134,8 @@
         "enabled": true,
         "notes": "Ashtabula County Sheriff OCV mobile inmate feed."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "summit_oh": {
       "id": "summit_oh",
@@ -150,7 +157,8 @@
         "enabled": true,
         "notes": "Summit County Sheriff Jail Inmate Roster."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "franklin_oh": {
       "id": "franklin_oh",
@@ -173,7 +181,8 @@
         "notes": "Franklin County Sheriff Inmate Information search.",
         "app_id": "a108543215"
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "lorain_oh": {
       "id": "lorain_oh",
@@ -188,7 +197,8 @@
         "notes": "Lorain County Common Pleas Court Tyler Odyssey eServices."
       },
       "jail_service": null,
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "delaware_oh": {
       "id": "delaware_oh",
@@ -203,7 +213,8 @@
         "notes": "Delaware County Common Pleas Court Tyler CourtView eServices."
       },
       "jail_service": null,
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "hamilton_oh": {
       "id": "hamilton_oh",
@@ -225,7 +236,8 @@
         "enabled": true,
         "notes": "Hamilton County Sheriff Inmate search."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "odrc_statewide": {
       "id": "odrc_statewide",
@@ -242,7 +254,8 @@
         "enabled": true,
         "notes": "Statewide Ohio prison inmates, parole, post-release control, and APA supervision."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "state_doc"
     },
     "huron_oh": {
       "id": "huron_oh",
@@ -265,7 +278,8 @@
         "enabled": true,
         "notes": "Huron County Sheriff OCV mobile inmate feed."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "auglaize_oh": {
       "id": "auglaize_oh",
@@ -288,7 +302,8 @@
         "enabled": true,
         "notes": "Auglaize County Sheriff OCV mobile inmate feed."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "morrow_oh": {
       "id": "morrow_oh",
@@ -311,7 +326,8 @@
         "enabled": true,
         "notes": "Morrow County Sheriff OCV mobile inmate feed."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "wyandot_oh": {
       "id": "wyandot_oh",
@@ -334,7 +350,8 @@
         "enabled": true,
         "notes": "Wyandot County Sheriff OCV mobile inmate feed."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "vermilion_il": {
       "id": "vermilion_il",
@@ -357,7 +374,8 @@
         "enabled": true,
         "notes": "Vermilion County Sheriff (Illinois) OCV mobile inmate feed."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county_border"
     },
     "scioto_oh": {
       "id": "scioto_oh",
@@ -380,7 +398,8 @@
         "enabled": true,
         "notes": "Portsmouth Police / Scioto County public safety OCV feed."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "madison_oh": {
       "id": "madison_oh",
@@ -403,7 +422,8 @@
         "enabled": true,
         "notes": "London Police / Madison County public safety OCV feed."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "ashland_oh": {
       "id": "ashland_oh",
@@ -426,7 +446,8 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from ashland APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "columbiana_oh": {
       "id": "columbiana_oh",
@@ -449,7 +470,8 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from columbiana APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "crawford_oh": {
       "id": "crawford_oh",
@@ -472,7 +494,8 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from crawford APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "defiance_oh": {
       "id": "defiance_oh",
@@ -495,7 +518,8 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from defiance APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "fairfield_oh": {
       "id": "fairfield_oh",
@@ -518,7 +542,8 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from fairfield APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "fayette_oh": {
       "id": "fayette_oh",
@@ -541,7 +566,8 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from fayette APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "geauga_oh": {
       "id": "geauga_oh",
@@ -564,7 +590,8 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from geauga APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "hancock_oh": {
       "id": "hancock_oh",
@@ -587,7 +614,8 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from hancock APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "hardin_oh": {
       "id": "hardin_oh",
@@ -610,7 +638,8 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from hardin APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "hocking_oh": {
       "id": "hocking_oh",
@@ -633,7 +662,8 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from hocking APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "holmes_oh": {
       "id": "holmes_oh",
@@ -656,7 +686,8 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from holmes APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "jefferson_oh": {
       "id": "jefferson_oh",
@@ -679,12 +710,13 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from jefferson APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "london_oh": {
       "id": "london_oh",
       "name": "London Ohio Police Division",
-      "county": "London",
+      "county": "Madison",
       "state": "OH",
       "fips": "39097",
       "court_service": {
@@ -702,12 +734,14 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from london APK."
       },
-      "active": true
+      "active": true,
+      "parent_county_id": "madison_oh",
+      "jurisdiction_type": "municipal_police"
     },
     "plain_city_oh": {
       "id": "plain_city_oh",
       "name": "Plain City, OH Police & Govt",
-      "county": "Plain City",
+      "county": "Madison",
       "state": "OH",
       "fips": "39097",
       "court_service": {
@@ -725,12 +759,14 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from plain_city APK."
       },
-      "active": true
+      "active": true,
+      "parent_county_id": "madison_oh",
+      "jurisdiction_type": "municipal_police"
     },
     "portsmouth_oh": {
       "id": "portsmouth_oh",
       "name": "Portsmouth Police Ohio",
-      "county": "Portsmouth",
+      "county": "Scioto",
       "state": "OH",
       "fips": "39145",
       "court_service": {
@@ -748,7 +784,9 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from portsmouth APK."
       },
-      "active": true
+      "active": true,
+      "parent_county_id": "scioto_oh",
+      "jurisdiction_type": "municipal_police"
     },
     "putnam_oh": {
       "id": "putnam_oh",
@@ -771,7 +809,8 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from putnam APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "sandusky_oh": {
       "id": "sandusky_oh",
@@ -794,7 +833,8 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from sandusky APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "seneca_oh": {
       "id": "seneca_oh",
@@ -817,7 +857,8 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from seneca APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "trumbull_oh": {
       "id": "trumbull_oh",
@@ -840,7 +881,8 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from trumbull APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "tuscarawas_oh": {
       "id": "tuscarawas_oh",
@@ -863,7 +905,8 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from tuscarawas APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "van_wert_oh": {
       "id": "van_wert_oh",
@@ -886,7 +929,8 @@
         "enabled": true,
         "notes": "OCV mobile inmate feed extracted from van_wert APK."
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "montgomery_oh": {
       "id": "montgomery_oh",
@@ -909,7 +953,8 @@
         "enabled": true,
         "notes": "Miami Valley Jails consortium (Montgomery County)"
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "butler_oh": {
       "id": "butler_oh",
@@ -932,7 +977,8 @@
         "enabled": true,
         "notes": "Miami Valley Jails consortium (Butler County)"
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "warren_oh": {
       "id": "warren_oh",
@@ -950,7 +996,8 @@
         "enabled": true,
         "notes": "Miami Valley Jails consortium (Warren County)"
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "clark_oh": {
       "id": "clark_oh",
@@ -968,7 +1015,8 @@
         "enabled": true,
         "notes": "Miami Valley Jails consortium (Clark County)"
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "greene_oh": {
       "id": "greene_oh",
@@ -986,7 +1034,8 @@
         "enabled": true,
         "notes": "Miami Valley Jails consortium (Greene County)"
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "miami_oh": {
       "id": "miami_oh",
@@ -1004,7 +1053,8 @@
         "enabled": true,
         "notes": "Miami Valley Jails consortium (Miami County)"
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "darke_oh": {
       "id": "darke_oh",
@@ -1022,7 +1072,8 @@
         "enabled": true,
         "notes": "Miami Valley Jails consortium (Darke County)"
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "preble_oh": {
       "id": "preble_oh",
@@ -1040,7 +1091,8 @@
         "enabled": true,
         "notes": "Miami Valley Jails consortium (Preble County)"
       },
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "portage_oh": {
       "id": "portage_oh",
@@ -1055,7 +1107,8 @@
         "notes": "Portage County Tyler CourtView eServices"
       },
       "jail_service": null,
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "mahoning_oh": {
       "id": "mahoning_oh",
@@ -1070,7 +1123,8 @@
         "notes": "Mahoning County Tyler CourtView eServices"
       },
       "jail_service": null,
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
     },
     "medina_oh": {
       "id": "medina_oh",
@@ -1085,7 +1139,1040 @@
         "notes": "Medina County Tyler Odyssey Portal"
       },
       "jail_service": null,
-      "active": true
+      "active": true,
+      "jurisdiction_type": "county"
+    },
+    "adams_oh": {
+      "id": "adams_oh",
+      "name": "Adams County Common Pleas Court & Sheriff",
+      "county": "Adams",
+      "state": "OH",
+      "fips": "39001",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Adams County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Adams County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "allen_oh": {
+      "id": "allen_oh",
+      "name": "Allen County Common Pleas Court & Sheriff",
+      "county": "Allen",
+      "state": "OH",
+      "fips": "39003",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Allen County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Allen County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "athens_oh": {
+      "id": "athens_oh",
+      "name": "Athens County Common Pleas Court & Sheriff",
+      "county": "Athens",
+      "state": "OH",
+      "fips": "39009",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Athens County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Athens County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "belmont_oh": {
+      "id": "belmont_oh",
+      "name": "Belmont County Common Pleas Court & Sheriff",
+      "county": "Belmont",
+      "state": "OH",
+      "fips": "39013",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Belmont County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Belmont County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "brown_oh": {
+      "id": "brown_oh",
+      "name": "Brown County Common Pleas Court & Sheriff",
+      "county": "Brown",
+      "state": "OH",
+      "fips": "39015",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Brown County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Brown County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "carroll_oh": {
+      "id": "carroll_oh",
+      "name": "Carroll County Common Pleas Court & Sheriff",
+      "county": "Carroll",
+      "state": "OH",
+      "fips": "39019",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Carroll County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Carroll County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "champaign_oh": {
+      "id": "champaign_oh",
+      "name": "Champaign County Common Pleas Court & Sheriff",
+      "county": "Champaign",
+      "state": "OH",
+      "fips": "39021",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Champaign County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Champaign County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "clermont_oh": {
+      "id": "clermont_oh",
+      "name": "Clermont County Common Pleas Court & Sheriff",
+      "county": "Clermont",
+      "state": "OH",
+      "fips": "39025",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Clermont County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Clermont County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "clinton_oh": {
+      "id": "clinton_oh",
+      "name": "Clinton County Common Pleas Court & Sheriff",
+      "county": "Clinton",
+      "state": "OH",
+      "fips": "39027",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Clinton County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Clinton County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "coshocton_oh": {
+      "id": "coshocton_oh",
+      "name": "Coshocton County Common Pleas Court & Sheriff",
+      "county": "Coshocton",
+      "state": "OH",
+      "fips": "39031",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Coshocton County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Coshocton County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "erie_oh": {
+      "id": "erie_oh",
+      "name": "Erie County Common Pleas Court & Sheriff",
+      "county": "Erie",
+      "state": "OH",
+      "fips": "39043",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Erie County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Erie County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "fulton_oh": {
+      "id": "fulton_oh",
+      "name": "Fulton County Common Pleas Court & Sheriff",
+      "county": "Fulton",
+      "state": "OH",
+      "fips": "39051",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Fulton County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Fulton County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "gallia_oh": {
+      "id": "gallia_oh",
+      "name": "Gallia County Common Pleas Court & Sheriff",
+      "county": "Gallia",
+      "state": "OH",
+      "fips": "39053",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Gallia County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Gallia County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "guernsey_oh": {
+      "id": "guernsey_oh",
+      "name": "Guernsey County Common Pleas Court & Sheriff",
+      "county": "Guernsey",
+      "state": "OH",
+      "fips": "39059",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Guernsey County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Guernsey County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "harrison_oh": {
+      "id": "harrison_oh",
+      "name": "Harrison County Common Pleas Court & Sheriff",
+      "county": "Harrison",
+      "state": "OH",
+      "fips": "39067",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Harrison County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Harrison County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "henry_oh": {
+      "id": "henry_oh",
+      "name": "Henry County Common Pleas Court & Sheriff",
+      "county": "Henry",
+      "state": "OH",
+      "fips": "39069",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Henry County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Henry County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "highland_oh": {
+      "id": "highland_oh",
+      "name": "Highland County Common Pleas Court & Sheriff",
+      "county": "Highland",
+      "state": "OH",
+      "fips": "39071",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Highland County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Highland County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "jackson_oh": {
+      "id": "jackson_oh",
+      "name": "Jackson County Common Pleas Court & Sheriff",
+      "county": "Jackson",
+      "state": "OH",
+      "fips": "39079",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Jackson County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Jackson County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "knox_oh": {
+      "id": "knox_oh",
+      "name": "Knox County Common Pleas Court & Sheriff",
+      "county": "Knox",
+      "state": "OH",
+      "fips": "39083",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Knox County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Knox County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "lawrence_oh": {
+      "id": "lawrence_oh",
+      "name": "Lawrence County Common Pleas Court & Sheriff",
+      "county": "Lawrence",
+      "state": "OH",
+      "fips": "39087",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Lawrence County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Lawrence County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "licking_oh": {
+      "id": "licking_oh",
+      "name": "Licking County Common Pleas Court & Sheriff",
+      "county": "Licking",
+      "state": "OH",
+      "fips": "39089",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Licking County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Licking County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "logan_oh": {
+      "id": "logan_oh",
+      "name": "Logan County Common Pleas Court & Sheriff",
+      "county": "Logan",
+      "state": "OH",
+      "fips": "39091",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Logan County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Logan County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "lucas_oh": {
+      "id": "lucas_oh",
+      "name": "Lucas County Common Pleas Court & Sheriff",
+      "county": "Lucas",
+      "state": "OH",
+      "fips": "39095",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Lucas County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Lucas County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "marion_oh": {
+      "id": "marion_oh",
+      "name": "Marion County Common Pleas Court & Sheriff",
+      "county": "Marion",
+      "state": "OH",
+      "fips": "39101",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Marion County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Marion County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "meigs_oh": {
+      "id": "meigs_oh",
+      "name": "Meigs County Common Pleas Court & Sheriff",
+      "county": "Meigs",
+      "state": "OH",
+      "fips": "39105",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Meigs County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Meigs County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "mercer_oh": {
+      "id": "mercer_oh",
+      "name": "Mercer County Common Pleas Court & Sheriff",
+      "county": "Mercer",
+      "state": "OH",
+      "fips": "39107",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Mercer County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Mercer County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "monroe_oh": {
+      "id": "monroe_oh",
+      "name": "Monroe County Common Pleas Court & Sheriff",
+      "county": "Monroe",
+      "state": "OH",
+      "fips": "39111",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Monroe County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Monroe County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "morgan_oh": {
+      "id": "morgan_oh",
+      "name": "Morgan County Common Pleas Court & Sheriff",
+      "county": "Morgan",
+      "state": "OH",
+      "fips": "39115",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Morgan County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Morgan County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "muskingum_oh": {
+      "id": "muskingum_oh",
+      "name": "Muskingum County Common Pleas Court & Sheriff",
+      "county": "Muskingum",
+      "state": "OH",
+      "fips": "39119",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Muskingum County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Muskingum County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "noble_oh": {
+      "id": "noble_oh",
+      "name": "Noble County Common Pleas Court & Sheriff",
+      "county": "Noble",
+      "state": "OH",
+      "fips": "39121",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Noble County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Noble County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "ottawa_oh": {
+      "id": "ottawa_oh",
+      "name": "Ottawa County Common Pleas Court & Sheriff",
+      "county": "Ottawa",
+      "state": "OH",
+      "fips": "39123",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Ottawa County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Ottawa County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "paulding_oh": {
+      "id": "paulding_oh",
+      "name": "Paulding County Common Pleas Court & Sheriff",
+      "county": "Paulding",
+      "state": "OH",
+      "fips": "39125",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Paulding County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Paulding County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "perry_oh": {
+      "id": "perry_oh",
+      "name": "Perry County Common Pleas Court & Sheriff",
+      "county": "Perry",
+      "state": "OH",
+      "fips": "39127",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Perry County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Perry County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "pickaway_oh": {
+      "id": "pickaway_oh",
+      "name": "Pickaway County Common Pleas Court & Sheriff",
+      "county": "Pickaway",
+      "state": "OH",
+      "fips": "39129",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Pickaway County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Pickaway County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "pike_oh": {
+      "id": "pike_oh",
+      "name": "Pike County Common Pleas Court & Sheriff",
+      "county": "Pike",
+      "state": "OH",
+      "fips": "39131",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Pike County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Pike County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "richland_oh": {
+      "id": "richland_oh",
+      "name": "Richland County Common Pleas Court & Sheriff",
+      "county": "Richland",
+      "state": "OH",
+      "fips": "39139",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Richland County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Richland County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "ross_oh": {
+      "id": "ross_oh",
+      "name": "Ross County Common Pleas Court & Sheriff",
+      "county": "Ross",
+      "state": "OH",
+      "fips": "39141",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Ross County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Ross County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "shelby_oh": {
+      "id": "shelby_oh",
+      "name": "Shelby County Common Pleas Court & Sheriff",
+      "county": "Shelby",
+      "state": "OH",
+      "fips": "39149",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Shelby County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Shelby County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "union_oh": {
+      "id": "union_oh",
+      "name": "Union County Common Pleas Court & Sheriff",
+      "county": "Union",
+      "state": "OH",
+      "fips": "39159",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Union County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Union County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "vinton_oh": {
+      "id": "vinton_oh",
+      "name": "Vinton County Common Pleas Court & Sheriff",
+      "county": "Vinton",
+      "state": "OH",
+      "fips": "39163",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Vinton County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Vinton County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "washington_oh": {
+      "id": "washington_oh",
+      "name": "Washington County Common Pleas Court & Sheriff",
+      "county": "Washington",
+      "state": "OH",
+      "fips": "39167",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Washington County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Washington County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "williams_oh": {
+      "id": "williams_oh",
+      "name": "Williams County Common Pleas Court & Sheriff",
+      "county": "Williams",
+      "state": "OH",
+      "fips": "39171",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Williams County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Williams County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
+    },
+    "wood_oh": {
+      "id": "wood_oh",
+      "name": "Wood County Common Pleas Court & Sheriff",
+      "county": "Wood",
+      "state": "OH",
+      "fips": "39173",
+      "court_service": {
+        "adapter": "unmapped",
+        "base_url": null,
+        "enabled": false,
+        "notes": "Pending court portal adapter for Wood County"
+      },
+      "jail_service": {
+        "adapter": "unmapped",
+        "feed_type": null,
+        "app_id": null,
+        "primary_url": null,
+        "fallback_url": null,
+        "enabled": false,
+        "notes": "Pending jail custody feed for Wood County"
+      },
+      "active": false,
+      "jurisdiction_type": "county"
     }
   }
 }

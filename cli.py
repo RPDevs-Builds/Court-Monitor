@@ -25,6 +25,8 @@ from core.db import (
     get_inmate_history,
     get_subject_timeline,
     get_db_stats,
+    get_ohio_coverage_summary,
+    get_remaining_counties,
 )
 
 DEFAULT_DOCKET_URL = "https://cpdocket.cp.cuyahogacounty.gov/CR_CaseInformation_Docket.aspx?q=hRRTYX-BnjfUgnoAk-HSrQ00n6DjqAxFUzIxKeQ1ac41"
@@ -58,8 +60,15 @@ def main():
     sub = parser.add_subparsers(dest="command", help="Command to run")
 
     # counties
-    p_counties = sub.add_parser("counties", help="List all registered Ohio counties and integration capabilities")
+    p_counties = sub.add_parser("counties", help="List registered Ohio counties and integration capabilities")
+    p_counties.add_argument("--all", "-a", action="store_true", help="List all 88 Ohio counties (including unmapped)")
     p_counties.add_argument("--json", action="store_true", help="Output as JSON")
+
+    # remaining
+    p_rem = sub.add_parser("remaining", help="List remaining uncovered Ohio counties (instant SQLite cache)")
+    p_rem.add_argument("--type", "-t", default="neither", choices=["neither", "court", "jail", "all"],
+                       help="Filter remaining counties: neither (default, 0 feeds active), court (missing docket), jail (missing custody), all (missing either)")
+    p_rem.add_argument("--json", action="store_true", help="Output as JSON")
 
     # search-name
     p_name = sub.add_parser("search-name", help="Search cases by defendant name")
@@ -202,16 +211,59 @@ def main():
     registry = get_registry()
 
     if args.command == "counties":
-        counties = registry.list_counties()
+        counties = registry.list_counties(active_only=not args.all)
         if args.json:
             print(json.dumps([c.model_dump() for c in counties], indent=2))
         else:
+            summary = get_ohio_coverage_summary()
+            print(f"\n================================================================================")
+            print(f"OHIO 88 COUNTIES COVERAGE STATUS: {summary['covered_counties']} / 88 COVERED ({summary['percent_covered']}%) | {summary['remaining_counties']} REMAINING")
+            print(f"================================================================================")
             rows = []
             for c in counties:
                 court_st = "YES" if c.court_service and c.court_service.enabled else "NO"
-                jail_st = f"YES ({c.jail_service.feed_type})" if c.jail_service and c.jail_service.enabled else "NO"
-                rows.append([c.id, c.name, c.county, court_st, jail_st])
-            print_table(rows, ["County ID", "Agency / Court Name", "County", "Court Active?", "Jail Active?"], title="Registered Ohio Jurisdictions")
+                jail_st = f"YES ({c.jail_service.adapter})" if c.jail_service and c.jail_service.enabled else "NO"
+                fips_str = c.fips or "N/A"
+                rows.append([fips_str, c.id, c.county, c.name, court_st, jail_st])
+            print_table(rows, ["FIPS", "County ID", "County", "Agency / Court Name", "Court Active?", "Jail Active?"],
+                        title=f"{'All 88' if args.all else 'Active'} Ohio Jurisdictions ({len(rows)})")
+
+    elif args.command == "remaining":
+        summary = get_ohio_coverage_summary()
+        remaining = get_remaining_counties(args.type)
+        if args.json:
+            print(json.dumps({
+                "summary": summary,
+                "filter": args.type,
+                "count": len(remaining),
+                "remaining_counties": remaining
+            }, indent=2))
+        else:
+            print(f"\n================================================================================")
+            print(f"OHIO 88 COUNTIES COVERAGE AUDIT (SQLITE CACHE)")
+            print(f"================================================================================")
+            print(f"Total Ohio Counties:     {summary['total_counties']}")
+            print(f"Covered (>=1 feed):      {summary['covered_counties']} ({summary['percent_covered']}%)")
+            print(f"  - Both Court & Jail:   {len(summary['both'])}")
+            print(f"  - Court Only:          {len(summary['court_only'])}")
+            print(f"  - Jail Only:           {len(summary['jail_only'])}")
+            print(f"Uncovered (Neither):     {summary['remaining_counties']} ({100.0 - summary['percent_covered']:.1f}%)")
+            print(f"================================================================================")
+
+            rows = []
+            for r in remaining:
+                c_status = "MISSING" if r["missing_court"] else f"ACTIVE ({r['court_adapter']})"
+                j_status = "MISSING" if r["missing_jail"] else f"ACTIVE ({r['jail_adapter']})"
+                rows.append([r["fips"], r["county"], r["county_id"], c_status, j_status])
+
+            filter_title = {
+                "neither": "Remaining Uncovered Counties (Zero Feeds Active)",
+                "court": "Counties Missing Court Docket Adapter",
+                "jail": "Counties Missing Jail Custody Feed",
+                "all": "Counties Missing At Least One Feed",
+            }.get(args.type, "Remaining Counties")
+            print_table(rows, ["FIPS", "County", "County ID", "Court Status", "Jail Status"],
+                        title=f"{filter_title} ({len(rows)} Counties)")
 
     elif args.command == "search-name":
         court_adapter = get_court_adapter(args.county)
