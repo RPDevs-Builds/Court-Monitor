@@ -71,3 +71,7 @@ data/sessions/*
 # System files
 .DS_Store
 Thumbs.db
+
+# Examples & captured HTML pages
+examples/
+
