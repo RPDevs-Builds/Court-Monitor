@@ -1370,10 +1370,10 @@
       "state": "OH",
       "fips": "39031",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Coshocton County"
+        "adapter": "coshocton",
+        "base_url": "https://eservices.coshoctoncourt.com/eservices",
+        "enabled": true,
+        "notes": "Equivant CourtView eServices (Coshocton, OH)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1384,7 +1384,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Coshocton County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "erie_oh": {
@@ -1466,10 +1466,10 @@
       "state": "OH",
       "fips": "39059",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Guernsey County"
+        "adapter": "guernsey",
+        "base_url": "https://clerkofcourts.guernseycounty.org/eservices",
+        "enabled": true,
+        "notes": "Equivant CourtView eServices (Cambridge, OH)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1480,7 +1480,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Guernsey County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "harrison_oh": {
@@ -1514,10 +1514,10 @@
       "state": "OH",
       "fips": "39069",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Henry County"
+        "adapter": "henry",
+        "base_url": "https://eservices.henrycountyohio.gov/eservices",
+        "enabled": true,
+        "notes": "Equivant CourtView eServices (Napoleon, OH)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1528,7 +1528,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Henry County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "highland_oh": {
@@ -1826,10 +1826,10 @@
       "state": "OH",
       "fips": "39119",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Muskingum County"
+        "adapter": "muskingum",
+        "base_url": "https://clerkofcourts.muskingumcounty.org/eservices",
+        "enabled": true,
+        "notes": "Equivant CourtView eServices (Zanesville, OH)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1840,7 +1840,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Muskingum County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "noble_oh": {
@@ -1898,10 +1898,10 @@
       "state": "OH",
       "fips": "39125",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Paulding County"
+        "adapter": "paulding",
+        "base_url": "https://eservices.pauldingcommonpleas.com/eservices",
+        "enabled": true,
+        "notes": "Equivant CourtView eServices (Paulding, OH)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1912,7 +1912,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Paulding County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "perry_oh": {
@@ -1922,10 +1922,10 @@
       "state": "OH",
       "fips": "39127",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Perry County"
+        "adapter": "perry",
+        "base_url": "https://courtvweb.perrycountyohio.com/eservices",
+        "enabled": true,
+        "notes": "CourtView eServices (New Lexington, OH)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1936,7 +1936,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Perry County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "pickaway_oh": {
@@ -1946,10 +1946,10 @@
       "state": "OH",
       "fips": "39129",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Pickaway County"
+        "adapter": "pickaway",
+        "base_url": "https://eservices.pickawaycountycourts.com/eservices",
+        "enabled": true,
+        "notes": "CourtView eServices (Circleville, OH)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1960,7 +1960,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Pickaway County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "pike_oh": {
@@ -1994,10 +1994,10 @@
       "state": "OH",
       "fips": "39139",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Richland County"
+        "adapter": "richland",
+        "base_url": "https://eservices.richlandcountycpcourt.org/eservices",
+        "enabled": true,
+        "notes": "CourtView / Tyler Odyssey eServices (Mansfield, OH)"
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -2008,7 +2008,7 @@
         "enabled": false,
         "notes": "Pending jail custody feed for Richland County"
       },
-      "active": false,
+      "active": true,
       "jurisdiction_type": "county"
     },
     "ross_oh": {

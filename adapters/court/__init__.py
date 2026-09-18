@@ -23,6 +23,14 @@ from adapters.court.allen import AllenCourtAdapter
 from adapters.court.knox import KnoxCourtAdapter
 from adapters.court.belmont import BelmontCourtAdapter
 from adapters.court.greene import GreeneCourtAdapter
+from adapters.court.richland import RichlandCourtAdapter
+from adapters.court.paulding import PauldingCourtAdapter
+from adapters.court.pickaway import PickawayCourtAdapter
+from adapters.court.perry import PerryCourtAdapter
+from adapters.court.henry import HenryCourtAdapter
+from adapters.court.coshocton import CoshoctonCourtAdapter
+from adapters.court.guernsey import GuernseyCourtAdapter
+from adapters.court.muskingum import MuskingumCourtAdapter
 from core.registry import get_registry
 
 
@@ -113,6 +121,46 @@ def get_court_adapter(county_id: str = "cuyahoga_oh") -> Optional[BaseCourtAdapt
             county_id=county.id,
             portal_url=county.court_service.base_url
         )
+    elif adapter_type in ("richland", "richland_court"):
+        return RichlandCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
+    elif adapter_type in ("paulding", "paulding_court"):
+        return PauldingCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
+    elif adapter_type in ("pickaway", "pickaway_court"):
+        return PickawayCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
+    elif adapter_type in ("perry", "perry_court"):
+        return PerryCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
+    elif adapter_type in ("henry", "henry_court"):
+        return HenryCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
+    elif adapter_type in ("coshocton", "coshocton_court"):
+        return CoshoctonCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
+    elif adapter_type in ("guernsey", "guernsey_court"):
+        return GuernseyCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
+    elif adapter_type in ("muskingum", "muskingum_court"):
+        return MuskingumCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
     elif adapter_type in ("courtview", "lake_courtview", "eservices"):
         return CourtViewAdapter(
             county_id=county.id,
@@ -144,7 +192,16 @@ __all__ = [
     "KnoxCourtAdapter",
     "BelmontCourtAdapter",
     "GreeneCourtAdapter",
+    "RichlandCourtAdapter",
+    "PauldingCourtAdapter",
+    "PickawayCourtAdapter",
+    "PerryCourtAdapter",
+    "HenryCourtAdapter",
+    "CoshoctonCourtAdapter",
+    "GuernseyCourtAdapter",
+    "MuskingumCourtAdapter",
     "get_court_adapter",
 ]
+
 
 
