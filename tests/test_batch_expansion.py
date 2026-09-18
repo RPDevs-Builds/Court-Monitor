@@ -112,6 +112,30 @@ class TestBatchExpansionAdapters(unittest.TestCase):
         self.assertIn("curl", curl)
         self.assertIn("courts.miamicountyohio.gov", curl)
 
+    def test_wayne_court_adapter_resolution(self):
+        """Verify WayneCounty Pioneer PublicAccess adapter resolves from registry."""
+        adapter = get_court_adapter("wayne_oh")
+        self.assertIsNotNone(adapter)
+        curl = adapter.generate_curl_command()
+        self.assertIn("curl", curl)
+        self.assertIn("courtsweb.waynecourts.org", curl)
+
+    def test_columbiana_court_adapter_resolution(self):
+        """Verify Columbiana County Pioneer Benchmark adapter resolves from registry."""
+        adapter = get_court_adapter("columbiana_oh")
+        self.assertIsNotNone(adapter)
+        curl = adapter.generate_curl_command()
+        self.assertIn("curl", curl)
+        self.assertIn("courts.ccclerk.org", curl)
+
+    def test_champaign_court_adapter_resolution(self):
+        """Verify Champaign County CourtView adapter resolves from registry."""
+        adapter = get_court_adapter("champaign_oh")
+        self.assertIsNotNone(adapter)
+        curl = adapter.generate_curl_command()
+        self.assertIn("curl", curl)
+        self.assertIn("eservices.champaignclerk.com", curl)
+
     def test_new_jail_feeds_resolution(self):
         """Verify all 10 new Miami Valley jail feeds resolve from registry."""
         jails = [
@@ -135,14 +159,14 @@ class TestBatchExpansionAdapters(unittest.TestCase):
             self.assertIn("miamivalleyjails.org", curl)
 
     def test_updated_coverage_metrics(self):
-        """Verify updated Ohio coverage summary reflects 88 covered, 19 dual-covered and 0 remaining."""
+        """Verify updated Ohio coverage summary reflects 88 covered, 22 dual-covered and 0 remaining."""
         s = get_ohio_coverage_summary()
         self.assertEqual(s["total_counties"], 88)
         self.assertEqual(s["covered_counties"], 88)
         self.assertEqual(s["remaining_counties"], 0)
-        self.assertEqual(len(s["both"]), 19)
+        self.assertEqual(len(s["both"]), 22)
         self.assertEqual(len(s["court_only"]), 38)
-        self.assertEqual(len(s["jail_only"]), 31)
+        self.assertEqual(len(s["jail_only"]), 28)
         self.assertAlmostEqual(s["percent_covered"], 100.0, delta=0.1)
 
         rem = get_remaining_counties("neither")
@@ -151,3 +175,4 @@ class TestBatchExpansionAdapters(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

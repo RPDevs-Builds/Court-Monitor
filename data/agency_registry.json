@@ -72,10 +72,10 @@
       "state": "OH",
       "fips": "39169",
       "court_service": {
-        "adapter": "wayne_court",
-        "base_url": "https://waynecourts.org",
-        "enabled": false,
-        "notes": "Common Pleas case records."
+        "adapter": "wayne",
+        "base_url": "https://courtsweb.waynecourts.org/publicaccess",
+        "enabled": true,
+        "notes": "Wayne County Municipal & Common Pleas Court via Pioneer Technology Group PublicAccess"
       },
       "jail_service": {
         "adapter": "ocv_rtjb",
@@ -456,10 +456,10 @@
       "state": "OH",
       "fips": "39029",
       "court_service": {
-        "adapter": null,
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court adapter integration"
+        "adapter": "columbiana",
+        "base_url": "https://courts.ccclerk.org/benchmarkweb",
+        "enabled": true,
+        "notes": "Columbiana County Court of Common Pleas via Pioneer Technology Group Benchmark"
       },
       "jail_service": {
         "adapter": "ocv_rtjb",
@@ -1308,10 +1308,10 @@
       "state": "OH",
       "fips": "39021",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Champaign County"
+        "adapter": "champaign",
+        "base_url": "https://eservices.champaignclerk.com/eservices",
+        "enabled": true,
+        "notes": "Champaign County Court of Common Pleas via Tyler CourtView eServices"
       },
       "jail_service": {
         "adapter": "miami_valley",

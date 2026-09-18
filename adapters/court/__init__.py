@@ -62,6 +62,8 @@ from adapters.court.clinton import ClintonCourtAdapter
 from adapters.court.brown import BrownCourtAdapter
 from adapters.court.clark import ClarkCourtAdapter
 from adapters.court.miami import MiamiCourtAdapter
+from adapters.court.pioneer import PioneerCourtAdapter, WayneCourtAdapter, ColumbianaCourtAdapter
+from adapters.court.champaign import ChampaignCourtAdapter
 from core.registry import get_registry
 
 
@@ -333,6 +335,27 @@ def get_court_adapter(county_id: str = "cuyahoga_oh") -> Optional[BaseCourtAdapt
             county_id=county.id,
             base_url=county.court_service.base_url
         )
+    elif adapter_type in ("wayne", "wayne_court"):
+        return WayneCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
+    elif adapter_type in ("columbiana", "columbiana_court"):
+        return ColumbianaCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
+    elif adapter_type in ("champaign", "champaign_court"):
+        return ChampaignCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
+    elif adapter_type in ("pioneer", "benchmark"):
+        return PioneerCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url or "https://courtsweb.waynecourts.org/publicaccess",
+            court_name=county.name
+        )
     elif adapter_type in ("courtview", "lake_courtview", "eservices"):
         return CourtViewAdapter(
             county_id=county.id,
@@ -403,8 +426,13 @@ __all__ = [
     "BrownCourtAdapter",
     "ClarkCourtAdapter",
     "MiamiCourtAdapter",
+    "PioneerCourtAdapter",
+    "WayneCourtAdapter",
+    "ColumbianaCourtAdapter",
+    "ChampaignCourtAdapter",
     "get_court_adapter",
 ]
+
 
 
 
