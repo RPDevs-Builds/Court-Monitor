@@ -39,6 +39,20 @@ from adapters.court.monroe import MonroeCourtAdapter
 from adapters.court.noble import NobleCourtAdapter
 from adapters.court.vinton import VintonCourtAdapter
 from adapters.court.crawford import CrawfordCourtAdapter
+from adapters.court.lucas import LucasCourtAdapter
+from adapters.court.erie import ErieCourtAdapter
+from adapters.court.athens import AthensCourtAdapter
+from adapters.court.morgan import MorganCourtAdapter
+from adapters.court.jackson import JacksonCourtAdapter
+from adapters.court.carroll import CarrollCourtAdapter
+from adapters.court.gallia import GalliaCourtAdapter
+from adapters.court.harrison import HarrisonCourtAdapter
+from adapters.court.marion import MarionCourtAdapter
+from adapters.court.mercer import MercerCourtAdapter
+from adapters.court.ottawa import OttawaCourtAdapter
+from adapters.court.pike import PikeCourtAdapter
+from adapters.court.washington import WashingtonCourtAdapter
+from adapters.court.williams import WilliamsCourtAdapter
 from core.registry import get_registry
 
 
@@ -56,6 +70,8 @@ def get_court_adapter(county_id: str = "cuyahoga_oh") -> Optional[BaseCourtAdapt
         return ClevelandMunicipalCourtAdapter(county_id=county.id)
     elif adapter_type in ("medina", "medina_court"):
         return MedinaCourtAdapter(county_id=county.id)
+    elif adapter_type in ("lucas", "lucas_court"):
+        return LucasCourtAdapter(county_id=county.id)
     elif adapter_type in ("tyler_tech", "odyssey"):
         return TylerCourtAdapter(
             county_id=county.id,
@@ -174,6 +190,26 @@ def get_court_adapter(county_id: str = "cuyahoga_oh") -> Optional[BaseCourtAdapt
             county_id=county.id,
             portal_url=county.court_service.base_url
         )
+    elif adapter_type in ("erie", "erie_court"):
+        return ErieCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
+    elif adapter_type in ("athens", "athens_court"):
+        return AthensCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
+    elif adapter_type in ("morgan", "morgan_court"):
+        return MorganCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
+    elif adapter_type in ("jackson", "jackson_court"):
+        return JacksonCourtAdapter(
+            county_id=county.id,
+            portal_url=county.court_service.base_url
+        )
     elif adapter_type in ("fulton", "fulton_court", "fulton_caselook"):
         return FultonCourtAdapter(
             county_id=county.id,
@@ -201,6 +237,51 @@ def get_court_adapter(county_id: str = "cuyahoga_oh") -> Optional[BaseCourtAdapt
         )
     elif adapter_type in ("crawford", "crawford_court", "crawford_caselook"):
         return CrawfordCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
+    elif adapter_type in ("carroll", "carroll_court", "carroll_caselook"):
+        return CarrollCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
+    elif adapter_type in ("gallia", "gallia_court", "gallia_caselook"):
+        return GalliaCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
+    elif adapter_type in ("harrison", "harrison_court", "harrison_caselook"):
+        return HarrisonCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
+    elif adapter_type in ("marion", "marion_court", "marion_caselook"):
+        return MarionCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
+    elif adapter_type in ("mercer", "mercer_court", "mercer_caselook"):
+        return MercerCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
+    elif adapter_type in ("ottawa", "ottawa_court", "ottawa_caselook"):
+        return OttawaCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
+    elif adapter_type in ("pike", "pike_court", "pike_caselook"):
+        return PikeCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
+    elif adapter_type in ("washington", "washington_court", "washington_caselook"):
+        return WashingtonCourtAdapter(
+            county_id=county.id,
+            base_url=county.court_service.base_url
+        )
+    elif adapter_type in ("williams", "williams_court", "williams_caselook"):
+        return WilliamsCourtAdapter(
             county_id=county.id,
             base_url=county.court_service.base_url
         )
@@ -244,6 +325,11 @@ __all__ = [
     "GuernseyCourtAdapter",
     "MuskingumCourtAdapter",
     "MeigsCourtAdapter",
+    "ErieCourtAdapter",
+    "AthensCourtAdapter",
+    "MorganCourtAdapter",
+    "JacksonCourtAdapter",
+    "LucasCourtAdapter",
     "HenschenCaseLookAdapter",
     "FultonCourtAdapter",
     "LawrenceCourtAdapter",
@@ -251,6 +337,15 @@ __all__ = [
     "NobleCourtAdapter",
     "VintonCourtAdapter",
     "CrawfordCourtAdapter",
+    "CarrollCourtAdapter",
+    "GalliaCourtAdapter",
+    "HarrisonCourtAdapter",
+    "MarionCourtAdapter",
+    "MercerCourtAdapter",
+    "OttawaCourtAdapter",
+    "PikeCourtAdapter",
+    "WashingtonCourtAdapter",
+    "WilliamsCourtAdapter",
     "get_court_adapter",
 ]
 

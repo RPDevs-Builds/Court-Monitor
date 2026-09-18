@@ -90,29 +90,40 @@ class HenschenCaseLookAdapter(BaseCourtAdapter):
     def _ensure_session(self, force_refresh: bool = False) -> bool:
         """
         Ensures active session with disclaimer acceptance completed.
+        Supports both classic /recordSearch.php and modern /search/{agency_id} portals.
         """
         if not force_refresh and "PHPSESSID" in self.session.cookies:
             return True
 
-        search_url = f"{self.base_url}/recordSearch.php?searchForm={self.agency_id}"
-        try:
-            resp = self.session.get(search_url, verify=self.verify_ssl, timeout=12)
-            if resp.status_code == 200:
-                # Check for disclaimer continue button
-                if "Notice to all CaseLook Users" in resp.text or "acceptAgreement" in resp.text:
-                    continue_match = re.search(r'href=[\"\x27](/[^\"\x27]*acceptAgreement[^\"\x27]*)[\"\x27]', resp.text)
+        search_urls = [
+            f"{self.base_url}/recordSearch.php?searchForm={self.agency_id}",
+            f"{self.base_url}/recordSearch.php?k=searchForm{self.agency_id}",
+            f"{self.base_url}/search/{self.agency_id}",
+            f"{self.base_url}/disclaimer/{self.agency_id}"
+        ]
+        
+        for search_url in search_urls:
+            try:
+                resp = self.session.get(search_url, verify=self.verify_ssl, timeout=12)
+                if resp.status_code in (200, 302):
+                    # Check for disclaimer continue / accept button
+                    continue_match = re.search(r'href=[\"\x27](/?(?:recordSearch\.php)?[^\"\x27]*acceptAgreement[^\"\x27]*)[\"\x27]', resp.text, re.IGNORECASE)
                     if not continue_match:
-                        continue_match = re.search(r'href=[\"\x27](/[^\"\x27]*accept=[^\"\x27]*)[\"\x27]', resp.text)
+                        continue_match = re.search(r'href=[\"\x27](/?(?:recordSearch\.php)?[^\"\x27]*accept=[^\"\x27]*)[\"\x27]', resp.text, re.IGNORECASE)
+                    if not continue_match:
+                        continue_match = re.search(r'href=[\"\x27](/(?:search|disclaimer)/[^\"\x27]*accept[^\"\x27]*)[\"\x27]', resp.text, re.IGNORECASE)
+
                     if continue_match:
-                        accept_url = f"{self.base_url}/{continue_match.group(1).lstrip('/')}"
+                        target = continue_match.group(1).lstrip("/")
+                        accept_url = f"{self.base_url}/{target}"
                         r2 = self.session.get(accept_url, verify=self.verify_ssl, timeout=12)
                         if r2.status_code == 200:
                             self._save_session()
                             return True
-                self._save_session()
-                return True
-        except Exception:
-            pass
+                    self._save_session()
+                    return True
+            except Exception:
+                pass
         return False
 
     def parse_search_results_html(self, html_text: str) -> List[CaseSummary]:

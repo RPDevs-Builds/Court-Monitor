@@ -1202,10 +1202,10 @@
       "state": "OH",
       "fips": "39009",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Athens County"
+        "adapter": "athens",
+        "base_url": "https://eservices.athenscommonpleas.com/eservices",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1274,10 +1274,10 @@
       "state": "OH",
       "fips": "39019",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Carroll County"
+        "adapter": "carroll",
+        "base_url": "https://www.carrollcountycourt.org",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1394,10 +1394,10 @@
       "state": "OH",
       "fips": "39043",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Erie County"
+        "adapter": "erie",
+        "base_url": "https://clerkofcourts.eriecounty.oh.gov/eservices",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1442,10 +1442,10 @@
       "state": "OH",
       "fips": "39053",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Gallia County"
+        "adapter": "gallia",
+        "base_url": "https://caselook.gmcourt.org",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1490,10 +1490,10 @@
       "state": "OH",
       "fips": "39067",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Harrison County"
+        "adapter": "harrison",
+        "base_url": "http://137.83.109.6:8889",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1562,10 +1562,10 @@
       "state": "OH",
       "fips": "39079",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Jackson County"
+        "adapter": "jackson",
+        "base_url": "https://eservices.jacksonohcountycourts.org/eservices",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1682,10 +1682,10 @@
       "state": "OH",
       "fips": "39095",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Lucas County"
+        "adapter": "lucas",
+        "base_url": "https://portal-ohlucas.tylertech.cloud/portal",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1706,10 +1706,10 @@
       "state": "OH",
       "fips": "39101",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Marion County"
+        "adapter": "marion",
+        "base_url": "https://marionmunicipalcourt.org",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1754,10 +1754,10 @@
       "state": "OH",
       "fips": "39107",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Mercer County"
+        "adapter": "mercer",
+        "base_url": "https://caselook.celinamunicipalcourt.org",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1802,10 +1802,10 @@
       "state": "OH",
       "fips": "39115",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Morgan County"
+        "adapter": "morgan",
+        "base_url": "https://cpccourtview.morgancountyohio.gov/eservices",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1874,10 +1874,10 @@
       "state": "OH",
       "fips": "39123",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Ottawa County"
+        "adapter": "ottawa",
+        "base_url": "http://www.ottawacountymunicipalcourt.com",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -1970,10 +1970,10 @@
       "state": "OH",
       "fips": "39131",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Pike County"
+        "adapter": "pike",
+        "base_url": "https://pikecountycourt.org",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -2114,10 +2114,10 @@
       "state": "OH",
       "fips": "39167",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Washington County"
+        "adapter": "washington",
+        "base_url": "https://www.mariettacourt.com",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "unmapped",
@@ -2138,10 +2138,10 @@
       "state": "OH",
       "fips": "39171",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Williams County"
+        "adapter": "williams",
+        "base_url": "https://bryanmunicipalcourt.com",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "unmapped",
