@@ -53,6 +53,7 @@ from adapters.court.ottawa import OttawaCourtAdapter
 from adapters.court.pike import PikeCourtAdapter
 from adapters.court.washington import WashingtonCourtAdapter
 from adapters.court.williams import WilliamsCourtAdapter
+from adapters.court.licking import LickingCourtAdapter
 from core.registry import get_registry
 
 
@@ -72,6 +73,8 @@ def get_court_adapter(county_id: str = "cuyahoga_oh") -> Optional[BaseCourtAdapt
         return MedinaCourtAdapter(county_id=county.id)
     elif adapter_type in ("lucas", "lucas_court"):
         return LucasCourtAdapter(county_id=county.id)
+    elif adapter_type in ("licking", "licking_court", "researchoh"):
+        return LickingCourtAdapter(county_id=county.id)
     elif adapter_type in ("tyler_tech", "odyssey"):
         return TylerCourtAdapter(
             county_id=county.id,
@@ -346,6 +349,7 @@ __all__ = [
     "PikeCourtAdapter",
     "WashingtonCourtAdapter",
     "WilliamsCourtAdapter",
+    "LickingCourtAdapter",
     "get_court_adapter",
 ]
 

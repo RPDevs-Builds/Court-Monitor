@@ -1634,10 +1634,10 @@
       "state": "OH",
       "fips": "39089",
       "court_service": {
-        "adapter": "unmapped",
-        "base_url": null,
-        "enabled": false,
-        "notes": "Pending court portal adapter for Licking County"
+        "adapter": "licking",
+        "base_url": "https://researchoh.tylerhost.net/CourtRecordsSearch/ui/county/LickingCaseSearch",
+        "enabled": true,
+        "polling_interval_seconds": 3600
       },
       "jail_service": {
         "adapter": "unmapped",

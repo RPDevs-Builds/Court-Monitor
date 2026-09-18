@@ -27,25 +27,24 @@ class TestOhioCountiesDatabaseAndCoverage(unittest.TestCase):
         self.assertEqual(fips_list[-1], "39175")
 
     def test_coverage_summary_counts(self):
-        """Verify coverage summary metrics across Ohio's 88 counties."""
+        """Verify coverage summary metrics across Ohio's 88 counties (100% milestone)."""
         s = get_ohio_coverage_summary()
         self.assertEqual(s["total_counties"], 88)
-        self.assertGreaterEqual(s["covered_counties"], 87)
-        self.assertGreaterEqual(len(s["both"]), 11)
-        self.assertGreaterEqual(len(s["court_only"]), 37)
-        self.assertGreaterEqual(len(s["jail_only"]), 39)
-        self.assertEqual(s["remaining_counties"], 1)
-        self.assertAlmostEqual(s["percent_covered"], 98.9, delta=0.5)
+        self.assertEqual(s["covered_counties"], 88)
+        self.assertEqual(len(s["both"]), 11)
+        self.assertEqual(len(s["court_only"]), 38)
+        self.assertEqual(len(s["jail_only"]), 39)
+        self.assertEqual(s["remaining_counties"], 0)
+        self.assertAlmostEqual(s["percent_covered"], 100.0, delta=0.1)
 
     def test_remaining_counties_filters(self):
         """Verify get_remaining_counties returns correct subsets."""
         neither = get_remaining_counties("neither")
-        self.assertEqual(len(neither), 1)
-        self.assertEqual(neither[0]["county"], "Licking")
+        self.assertEqual(len(neither), 0)
 
         # Court missing
         court_missing = get_remaining_counties("court")
-        self.assertEqual(len(court_missing), 40)
+        self.assertEqual(len(court_missing), 39)
 
         # Jail missing
         jail_missing = get_remaining_counties("jail")
@@ -57,7 +56,7 @@ class TestOhioCountiesDatabaseAndCoverage(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         data = response.json()
         self.assertEqual(data["total_counties"], 88)
-        self.assertEqual(data["remaining_counties"], 1)
+        self.assertEqual(data["remaining_counties"], 0)
         self.assertIn("both", data)
         self.assertIn("neither", data)
 
@@ -66,10 +65,9 @@ class TestOhioCountiesDatabaseAndCoverage(unittest.TestCase):
         response = self.client.get("/api/counties/remaining?type=neither")
         self.assertEqual(response.status_code, 200)
         data = response.json()
-        self.assertEqual(data["count"], 1)
+        self.assertEqual(data["count"], 0)
         self.assertEqual(data["filter"], "neither")
-        self.assertEqual(len(data["remaining_counties"]), 1)
-        self.assertEqual(data["remaining_counties"][0]["county"], "Licking")
+        self.assertEqual(len(data["remaining_counties"]), 0)
 
 
 if __name__ == "__main__":

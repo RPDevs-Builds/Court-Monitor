@@ -40,6 +40,14 @@ class TestBatchExpansionAdapters(unittest.TestCase):
         self.assertIn("curl", curl)
         self.assertIn("portal-ohlucas.tylertech.cloud", curl)
 
+    def test_licking_court_adapter_resolution(self):
+        """Verify Licking County Tyler re:SearchOH court adapter resolves from registry."""
+        adapter = get_court_adapter("licking_oh")
+        self.assertIsNotNone(adapter)
+        curl = adapter.generate_curl_command()
+        self.assertIn("curl", curl)
+        self.assertIn("researchoh.tylerhost.net", curl)
+
     def test_new_jail_feeds_resolution(self):
         """Verify all 10 new Miami Valley jail feeds resolve from registry."""
         jails = [
@@ -63,19 +71,18 @@ class TestBatchExpansionAdapters(unittest.TestCase):
             self.assertIn("miamivalleyjails.org", curl)
 
     def test_updated_coverage_metrics(self):
-        """Verify updated Ohio coverage summary reflects 87 covered and 1 remaining."""
+        """Verify updated Ohio coverage summary reflects 88 covered and 0 remaining (100% milestone)."""
         s = get_ohio_coverage_summary()
         self.assertEqual(s["total_counties"], 88)
-        self.assertEqual(s["covered_counties"], 87)
-        self.assertEqual(s["remaining_counties"], 1)
+        self.assertEqual(s["covered_counties"], 88)
+        self.assertEqual(s["remaining_counties"], 0)
         self.assertEqual(len(s["both"]), 11)
-        self.assertEqual(len(s["court_only"]), 37)
+        self.assertEqual(len(s["court_only"]), 38)
         self.assertEqual(len(s["jail_only"]), 39)
-        self.assertAlmostEqual(s["percent_covered"], 98.9, delta=0.5)
+        self.assertAlmostEqual(s["percent_covered"], 100.0, delta=0.1)
 
         rem = get_remaining_counties("neither")
-        self.assertEqual(len(rem), 1)
-        self.assertEqual(rem[0]["county"], "Licking")
+        self.assertEqual(len(rem), 0)
 
 
 if __name__ == "__main__":
